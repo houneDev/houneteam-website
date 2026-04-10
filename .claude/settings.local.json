@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p \"F:/Projects/ChaoProject/HouneTeam_web/assets/css\" \"F:/Projects/ChaoProject/HouneTeam_web/assets/js\" \"F:/Projects/ChaoProject/HouneTeam_web/assets/images\")",
+      "Bash(cp \"F:/Projects/ChaoProject/HouneTeam_web/logo-houneteam.png\" \"F:/Projects/ChaoProject/HouneTeam_web/assets/images/\")",
+      "Bash(cp \"F:/Projects/ChaoProject/HouneTeam_web/header-image.png\" \"F:/Projects/ChaoProject/HouneTeam_web/assets/images/\")",
+      "Bash(cp \"F:/Projects/ChaoProject/WebSite_extracted/WebSite/assets/icon_512x512.png\" \"F:/Projects/ChaoProject/HouneTeam_web/assets/images/\")",
+      "mcp__Claude_Preview__preview_start"
+    ]
+  }
+}

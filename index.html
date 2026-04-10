@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HouneTeam — Japan-based indie game studio crafting engaging mobile games. Explore our games, learn about our team, and partner with us.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="HouneTeam — Indie Game Studio">
+  <meta property="og:description" content="Japan-based indie studio crafting engaging mobile games.">
+  <meta property="og:site_name" content="HouneTeam">
+  <title>HouneTeam — Indie Game Studio</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/main.js"></script>
+  <script defer src="assets/js/i18n.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "HouneTeam",
+    "description": "Japan-based indie game studio creating engaging mobile games.",
+    "email": "info@houneteam.com",
+    "url": "",
+    "sameAs": [
+      "https://play.google.com/store/apps/dev?id=9215006691592135818"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-icon">H</span>
+        <span>HouneTeam</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="games.html" data-i18n="nav.games">Games</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="kicker" data-i18n="hero.kicker">Indie Game Studio &bull; Japan</div>
+        <h1><span data-i18n="hero.title1">We craft mobile games</span><br><span class="gradient-text" data-i18n="hero.title2">people love</span></h1>
+        <p data-i18n="hero.desc">HouneTeam is a Japan-based indie studio focused on creating engaging idle and casual mobile games that players enjoy anytime, anywhere.</p>
+        <div class="btn-group">
+          <a href="games.html" class="btn btn-primary" data-i18n="hero.btn.games">View Our Games</a>
+          <a href="#contact" class="btn btn-outline" data-i18n="hero.btn.partner">Partner With Us</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-visual-glow"></div>
+        <div class="hero-showcase">
+          <div class="hero-showcase-card">
+            <img src="assets/images/icon_512x512.png" alt="Lumo Idle Park" class="hero-showcase-icon">
+            <div class="hero-showcase-info">
+              <span class="hero-showcase-title">Lumo Idle Park</span>
+              <span class="hero-showcase-sub" data-i18n="hero.showcase.sub">Available on Google Play</span>
+            </div>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <span class="hero-stat-number">1</span>
+              <span class="hero-stat-label" data-i18n="hero.stat1.label">Published Game</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-number">JP</span>
+              <span class="hero-stat-label" data-i18n="hero.stat2.label">Based in Japan</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-number">Mobile</span>
+              <span class="hero-stat-label" data-i18n="hero.stat3.label">Platform</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Games Showcase -->
+  <section class="section" id="games">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <div class="kicker" data-i18n="games.kicker">Our Games</div>
+        <h2 data-i18n="games.title">What We've Built</h2>
+        <p data-i18n="games.desc">Explore the games we've created and published on mobile platforms.</p>
+      </div>
+
+      <div class="game-card animate-on-scroll">
+        <img class="game-icon" src="assets/images/icon_512x512.png" alt="Lumo Idle Park icon">
+        <div class="game-info">
+          <h3>Lumo Idle Park</h3>
+          <div class="game-badges">
+            <span class="badge">Idle</span>
+            <span class="badge purple">Tycoon</span>
+            <span class="badge green">Android</span>
+          </div>
+          <p data-i18n="game.lumo.desc">Build and manage your own magical park! Grow exotic trees, collect resources, unlock new areas, and watch your park thrive even while you're away with the offline income system.</p>
+          <ul class="game-features">
+            <li data-i18n="game.lumo.f1">Idle progression with offline income</li>
+            <li data-i18n="game.lumo.f2">Boost system (Speed &amp; Rare)</li>
+            <li data-i18n="game.lumo.f3">Multiple areas to unlock</li>
+            <li data-i18n="game.lumo.f4">Cloud save via Google Play Games</li>
+          </ul>
+          <div class="btn-group">
+            <a href="https://play.google.com/store/apps/details?id=com.houneteam.lumoidlepark" target="_blank" rel="noopener noreferrer" class="store-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="#4285F4" d="M1.22 0C.55 0 0 .58 0 1.3v21.4C0 23.42.55 24 1.22 24l12.3-12L1.22 0z"/>
+                <path fill="#EA4335" d="M16.42 7.58 4.8.31 1.22 0l12.52 12 2.68-4.42z"/>
+                <path fill="#34A853" d="M4.8 23.69l11.62-7.27-2.68-4.42L1.22 24l3.58-.31z"/>
+                <path fill="#FBBC05" d="M22.4 10.83l-5.98-3.25-2.68 4.42 2.68 4.42 5.96-3.24a1.5 1.5 0 0 0 .02-2.35z"/>
+              </svg>
+              <span data-i18n="game.btn.play">Get it on Google Play</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Preview -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <div class="kicker" data-i18n="about.kicker">About Us</div>
+        <h2 data-i18n="about.title">Who We Are</h2>
+        <p data-i18n="about.desc">A passionate indie team dedicated to crafting memorable mobile experiences.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card value-card animate-on-scroll">
+          <div class="value-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#05111f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg>
+          </div>
+          <h3 data-i18n="about.v1.title">Mobile First</h3>
+          <p data-i18n="about.v1.desc">We design and develop exclusively for mobile platforms, ensuring every detail is optimized for touch-based experiences.</p>
+        </div>
+        <div class="card value-card animate-on-scroll">
+          <div class="value-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#05111f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3 data-i18n="about.v2.title">Player Driven</h3>
+          <p data-i18n="about.v2.desc">Every design decision starts with the player. We build games around feedback, data, and a genuine love for great gameplay.</p>
+        </div>
+        <div class="card value-card animate-on-scroll">
+          <div class="value-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#05111f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3 data-i18n="about.v3.title">Quality Craft</h3>
+          <p data-i18n="about.v3.desc">Made in Japan with attention to detail. We focus on polishing every aspect of our games before releasing them to players.</p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 36px;">
+        <a href="about.html" class="btn" data-i18n="about.btn">Learn More About Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Partnership CTA -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="cta-banner animate-on-scroll">
+        <div class="kicker" data-i18n="contact.kicker">Partnerships</div>
+        <h2 data-i18n="contact.title">Let's Build Something Together</h2>
+        <p data-i18n="contact.desc">Interested in publishing, investment, or collaboration? We'd love to hear from you.</p>
+        <div class="btn-group">
+          <a href="mailto:info@houneteam.com" class="btn btn-primary" data-i18n="contact.btn.touch">Get in Touch</a>
+          <a href="https://play.google.com/store/apps/dev?id=9215006691592135818" target="_blank" rel="noopener noreferrer" class="btn" data-i18n="contact.btn.play">View on Google Play</a>
+        </div>
+        <div class="cta-email">
+          <span data-i18n="contact.email.prefix">Or email us directly at</span> <a href="mailto:info@houneteam.com">info@houneteam.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="brand-icon">H</span>
+          HouneTeam
+        </div>
+        <div class="footer-links">
+          <a href="index.html" data-i18n="footer.link.home">Home</a>
+          <a href="games.html" data-i18n="footer.link.games">Games</a>
+          <a href="about.html" data-i18n="footer.link.about">About</a>
+          <a href="privacy.html" data-i18n="footer.link.privacy">Privacy Policy</a>
+          <a href="terms.html" data-i18n="footer.link.terms">Terms of Service</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; <span data-year></span> HouneTeam. <span data-i18n="footer.copyright">All rights reserved.</span></div>
+        <div class="lang-picker">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="ja">日本語</button>
+          <button class="lang-btn" data-lang="ru">RU</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
