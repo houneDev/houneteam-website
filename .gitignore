@@ -1,5 +1,6 @@
-# Claude
+# Claude / agents
 .claude/
+.agents/
 
 # Next.js build cache
 .next/
