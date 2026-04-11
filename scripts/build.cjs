@@ -38,5 +38,8 @@ if (fs.existsSync(cname)) {
   fs.copyFileSync(cname, path.join(docsDir, 'CNAME'))
 }
 
+// .nojekyll disables Jekyll processing so GitHub Pages serves _next/ folder correctly
+fs.writeFileSync(path.join(docsDir, '.nojekyll'), '')
+
 console.log('\n✓ docs/ ready for GitHub Pages')
 process.exit(0)
