@@ -63,14 +63,8 @@ export default function GamesShowcase() {
           initial={{ opacity: 0, y: reduced ? 0 : 24 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.55, delay: 0.18, ease: ease.out }}
-          className="relative card-base p-8 md:p-10 overflow-hidden"
+          className="relative card-base p-8 md:p-10"
         >
-          {/* Vertical accent line — desktop only */}
-          <div
-            className="hidden md:block absolute top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-[rgba(124,199,255,0.12)] to-transparent pointer-events-none"
-            style={{ left: '40%' }}
-          />
-
           <div className="flex flex-col md:grid md:grid-cols-[auto_1fr] gap-8 md:gap-12 items-start">
             {/* Icon — no floating items on mobile */}
             <div className="relative flex-shrink-0 self-start">
@@ -146,15 +140,6 @@ export default function GamesShowcase() {
             </div>
           </div>
 
-          {/* Ambient conveyor — desktop only */}
-          <Image
-            src="/game/conv.png"
-            alt=""
-            width={180}
-            height={100}
-            className="absolute bottom-4 right-6 opacity-10 no-drag pointer-events-none hidden md:block"
-            aria-hidden="true"
-          />
         </motion.div>
       </div>
     </section>
