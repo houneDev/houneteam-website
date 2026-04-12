@@ -66,16 +66,32 @@ export default function GamesPage() {
           className="card-base overflow-hidden"
         >
           {/* Hero area */}
-          <div className="relative p-8 md:p-12 border-b border-[rgba(124,199,255,0.06)]">
+          <div className="relative p-8 md:p-12 border-b border-[rgba(124,199,255,0.06)] overflow-hidden">
+            {/* Glow centered behind icon — same math as GamesShowcase */}
             <div
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                background:
-                  'radial-gradient(ellipse 60% 80% at 80% 50%, rgba(124,199,255,0.04) 0%, transparent 60%)',
-              }}
+              className="hidden md:block absolute pointer-events-none"
+              style={{ top: '-60px', left: '-60px', width: 360, height: 360, zIndex: 0 }}
+              aria-hidden="true"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/game/glow.png"
+                alt=""
+                style={{ width: '100%', height: '100%', objectFit: 'contain', opacity: 0.22, mixBlendMode: 'screen' }}
+              />
+            </div>
+
+            {/* Conveyor — decorative, right side */}
+            <Image
+              src="/game/conv.png"
+              alt="" width={260} height={144}
+              className="hidden md:block absolute bottom-4 right-6 no-drag pointer-events-none"
+              style={{ opacity: 0.18, zIndex: 0 }}
+              aria-hidden="true"
             />
-            <div className="relative flex flex-col md:flex-row md:items-start gap-8">
-              {/* Icon + ambient */}
+
+            <div className="relative z-10 flex flex-col md:flex-row md:items-start gap-8">
+              {/* Icon — clean */}
               <div className="relative flex-shrink-0 w-[120px] h-[120px]">
                 <Image
                   src="/game/game-icon.png"
@@ -83,24 +99,6 @@ export default function GamesPage() {
                   fill
                   className="rounded-3xl object-cover shadow-xl"
                   priority
-                />
-                <Image
-                  src="/game/gem.png"
-                  alt=""
-                  width={40}
-                  height={40}
-                  className="absolute -top-4 -right-3 animate-float-a no-drag"
-                  style={{ animationDelay: '-0.8s' }}
-                  aria-hidden="true"
-                />
-                <Image
-                  src="/game/gold.png"
-                  alt=""
-                  width={32}
-                  height={32}
-                  className="absolute -bottom-3 -right-4 animate-float-b no-drag"
-                  style={{ animationDelay: '-2.1s' }}
-                  aria-hidden="true"
                 />
               </div>
 
