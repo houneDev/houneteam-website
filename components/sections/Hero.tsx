@@ -16,13 +16,11 @@ const item = (reduced: boolean) => ({
   show: { opacity: 1, y: 0, transition: { duration: reduced ? 0 : 0.5, ease: ease.out } },
 })
 
-// Desktop floating collectibles — positioned relative to right half
+// Floating collectibles — orbit the game card (desktop only)
 const collectibles = [
-  { src: '/game/lumo-coin.png', className: 'absolute top-[12%] right-[38%] w-[56px] animate-float-a', delay: '-3.0s' },
-  { src: '/game/gem.png',       className: 'absolute top-[20%] right-[16%] w-[52px] animate-float-b', delay: '-0.6s' },
-  { src: '/game/gold.png',      className: 'absolute top-[38%] right-[28%] w-[48px] animate-float-a', delay: '-2.1s' },
-  { src: '/game/fruit1.png',    className: 'absolute top-[28%] right-[44%] w-[44px] animate-float-b', delay: '-1.4s' },
-  { src: '/game/fruit2.png',    className: 'absolute top-[55%] right-[14%] w-[40px] animate-float-a', delay: '-0.3s' },
+  { src: '/game/lumo-coin.png', className: 'absolute bottom-[46%] right-[22%] w-[50px] animate-float-a', delay: '-3.0s' },
+  { src: '/game/gem.png',       className: 'absolute bottom-[52%] right-[11%] w-[44px] animate-float-b', delay: '-0.6s' },
+  { src: '/game/gold.png',      className: 'absolute bottom-[40%] right-[32%] w-[42px] animate-float-a', delay: '-2.1s' },
 ]
 
 export default function Hero() {
@@ -61,7 +59,7 @@ export default function Hero() {
 
         {/* Game icon card */}
         <div
-          className="absolute bottom-[20%] right-[8%] bg-[rgba(15,26,46,0.88)] border border-[rgba(124,199,255,0.14)] backdrop-blur-md rounded-2xl p-3 flex items-center gap-3 shadow-xl"
+          className="absolute bottom-[22%] right-[14%] bg-[rgba(15,26,46,0.88)] border border-[rgba(124,199,255,0.14)] backdrop-blur-md rounded-2xl p-3 flex items-center gap-3 shadow-xl"
           style={{ minWidth: 210 }}
         >
           <Image src="/game/game-icon.png" alt="Lumo Idle Park" width={48} height={48} className="rounded-xl flex-shrink-0" />
@@ -82,22 +80,22 @@ export default function Hero() {
 
       {/* Palm trees — full width on mobile, right-anchored on desktop */}
       <div className="absolute inset-y-0 right-0 w-full pointer-events-none" aria-hidden="true">
-        {/* Tallest palm — far right */}
+        {/* Tallest palm — far right edge, behind card */}
         <Image
           src="/game/palm3.png" alt="" width={320} height={500}
-          className="absolute bottom-0 right-[0%] md:right-[5%] w-[150px] md:w-[260px] animate-sway origin-bottom"
+          className="absolute bottom-0 right-[0%] md:right-[1%] w-[150px] md:w-[240px] animate-sway origin-bottom"
           style={{ animationDelay: '0s' }} priority draggable={false}
         />
-        {/* Mid palm — center on mobile, center-right on desktop */}
+        {/* Mid palm — center on mobile, mid-right on desktop */}
         <Image
           src="/game/palm1.png" alt="" width={240} height={380}
-          className="absolute bottom-0 left-[32%] md:left-auto md:right-[26%] w-[105px] md:w-[190px] animate-sway origin-bottom"
+          className="absolute bottom-0 left-[32%] md:left-auto md:right-[30%] w-[105px] md:w-[180px] animate-sway origin-bottom"
           style={{ animationDelay: '-1.8s' }} priority draggable={false}
         />
-        {/* Small palm — left on mobile, further left on desktop */}
+        {/* Small palm — left on mobile, deeper background on desktop */}
         <Image
           src="/game/palm2.png" alt="" width={160} height={260}
-          className="absolute bottom-0 left-[2%] md:left-auto md:right-[43%] w-[75px] md:w-[130px] animate-sway origin-bottom opacity-60"
+          className="absolute bottom-0 left-[2%] md:left-auto md:right-[46%] w-[75px] md:w-[120px] animate-sway origin-bottom opacity-50"
           style={{ animationDelay: '-3.2s' }} draggable={false}
         />
       </div>
