@@ -7,14 +7,25 @@ import Footer from '@/components/layout/Footer'
 export const metadata: Metadata = {
   title: 'HouneTeam | Indie Game Studio',
   description:
-    'HouneTeam is a small indie game studio based in Japan. We make idle games for Android. One published title: Lumo Idle Park.',
+    'HouneTeam is a small indie game studio based in Japan. We build mobile games: idle, casual, and tycoon. Published title: Lumo Idle Park on Android.',
   metadataBase: new URL('https://houneteam.com'),
+  alternates: {
+    canonical: 'https://houneteam.com/',
+  },
   openGraph: {
     title: 'HouneTeam | Indie Game Studio',
-    description: 'Small indie game studio based in Japan. Idle games for Android.',
+    description:
+      'Small indie game studio based in Japan. We build mobile games: idle, casual, and tycoon.',
     siteName: 'HouneTeam',
+    url: 'https://houneteam.com/',
     locale: 'en_US',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'HouneTeam | Indie Game Studio',
+    description:
+      'Small indie game studio based in Japan. We build mobile games: idle, casual, and tycoon.',
   },
   icons: {
     icon: '/game/favicon.svg',
