@@ -5,7 +5,7 @@ import { useRef } from 'react'
 import { useI18n } from '@/lib/i18n'
 import { ease } from '@/lib/utils'
 
-const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.houneteam.lumoidlepark'
+const PLAY_URL = 'https://play.google.com/store/apps/dev?id=9215006691592135818'
 
 function GooglePlayIcon() {
   return (

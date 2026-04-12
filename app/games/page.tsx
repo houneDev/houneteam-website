@@ -7,7 +7,7 @@ import { ease } from '@/lib/utils'
 import ContactCTA from '@/components/sections/ContactCTA'
 
 const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.houneteam.lumoidlepark'
-const PLAY_DEV_URL = 'https://play.google.com/store/apps/developer?id=HouneTeam'
+const PLAY_DEV_URL = 'https://play.google.com/store/apps/dev?id=9215006691592135818'
 
 const FEATURE_KEYS = [
   'game.lumo.f1',
