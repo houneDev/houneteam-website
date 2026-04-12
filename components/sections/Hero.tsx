@@ -29,7 +29,7 @@ const topScene = [
   { src: '/game/conv.png',       w: 120, h: 66, cls: 'absolute top-[8%]  right-[5%]  opacity-55',                           delay: '' },
   { src: '/game/fruit4.png',     w: 38,  h: 38, cls: 'absolute top-[17%] right-[4%]  w-[34px] animate-float-b',             delay: '-0.8s' },
   // Upper centre-right
-  { src: '/game/suna-dokei.png', w: 40,  h: 40, cls: 'absolute top-[4%]  right-[22%] w-[36px] animate-float-b',             delay: '-2.0s' },
+  { src: '/game/suna-dokei.png', w: 40,  h: 40, cls: 'absolute top-[10%] right-[22%] w-[36px] animate-float-b',             delay: '-2.0s' },
   { src: '/game/box.png',        w: 44,  h: 44, cls: 'absolute top-[19%] right-[17%] w-[38px] animate-float-a',             delay: '-3.5s' },
   // Bridge zone — fills the dead centre-right gap
   { src: '/game/fruit1.png',     w: 36,  h: 36, cls: 'absolute top-[26%] right-[32%] w-[30px] animate-float-a opacity-60',  delay: '-1.6s' },

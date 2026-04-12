@@ -5,12 +5,12 @@ import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 
 export const metadata: Metadata = {
-  title: 'HouneTeam — Indie Game Studio',
+  title: 'HouneTeam | Indie Game Studio',
   description:
     'HouneTeam is a small indie game studio based in Japan. We make idle games for Android. One published title: Lumo Idle Park.',
   metadataBase: new URL('https://houneteam.com'),
   openGraph: {
-    title: 'HouneTeam — Indie Game Studio',
+    title: 'HouneTeam | Indie Game Studio',
     description: 'Small indie game studio based in Japan. Idle games for Android.',
     siteName: 'HouneTeam',
     locale: 'en_US',

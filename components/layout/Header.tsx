@@ -53,10 +53,10 @@ export default function Header() {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md border-b',
         scrolled
-          ? 'bg-[rgba(6,11,24,0.92)] backdrop-blur-md border-b border-[rgba(124,199,255,0.06)]'
-          : 'bg-transparent'
+          ? 'bg-[rgba(6,11,24,0.92)] border-[rgba(124,199,255,0.06)]'
+          : 'bg-transparent border-transparent'
       )}
     >
       <div className="max-w-[1240px] mx-auto px-6 h-16 flex items-center justify-between">
