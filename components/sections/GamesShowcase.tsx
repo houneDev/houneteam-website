@@ -124,7 +124,7 @@ export default function GamesShowcase() {
             </div>
 
             <div className="relative z-10 flex flex-col md:grid md:grid-cols-[auto_1fr] gap-8 md:gap-12 items-start">
-              {/* Icon + floating ambient items */}
+              {/* Game icon — clean, no clutter */}
               <div className="relative flex-shrink-0 self-start">
                 <div className="relative w-[90px] h-[90px] md:w-[120px] md:h-[120px]">
                   <Image
@@ -134,35 +134,6 @@ export default function GamesShowcase() {
                     className="rounded-2xl object-cover shadow-lg"
                   />
                 </div>
-                {/* Items orbiting the icon on all 4 corners */}
-                <Image
-                  src="/game/fruit3.png"
-                  alt="" width={36} height={36}
-                  className="hidden md:block absolute -top-4 -left-3 animate-float-a no-drag"
-                  style={{ animationDelay: '-2.4s' }}
-                  aria-hidden="true"
-                />
-                <Image
-                  src="/game/gold.png"
-                  alt="" width={36} height={36}
-                  className="hidden md:block absolute -top-3 -right-4 animate-float-b no-drag"
-                  style={{ animationDelay: '-0.9s' }}
-                  aria-hidden="true"
-                />
-                <Image
-                  src="/game/gem-pile.png"
-                  alt="" width={54} height={54}
-                  className="hidden md:block absolute -bottom-5 -left-4 animate-float-b no-drag"
-                  style={{ animationDelay: '-1.2s' }}
-                  aria-hidden="true"
-                />
-                <Image
-                  src="/game/gem.png"
-                  alt="" width={32} height={32}
-                  className="hidden md:block absolute -bottom-3 -right-4 animate-float-a no-drag"
-                  style={{ animationDelay: '-3.6s' }}
-                  aria-hidden="true"
-                />
               </div>
 
               {/* Content */}
@@ -209,6 +180,17 @@ export default function GamesShowcase() {
                 </div>
               </div>
             </div>
+
+            {/* Conveyor — decorative, right side of card, desktop only */}
+            <Image
+              src="/game/conv.png"
+              alt=""
+              width={260}
+              height={144}
+              className="hidden md:block absolute bottom-6 right-6 no-drag pointer-events-none"
+              style={{ opacity: 0.18 }}
+              aria-hidden="true"
+            />
           </motion.div>
         </AnimatePresence>
       </div>
