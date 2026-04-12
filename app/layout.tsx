@@ -20,12 +20,14 @@ export const metadata: Metadata = {
     url: 'https://houneteam.com/',
     locale: 'en_US',
     type: 'website',
+    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'HouneTeam' }],
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: 'HouneTeam | Indie Game Studio',
     description:
       'Small indie game studio based in Japan. We build mobile games: idle, casual, and tycoon.',
+    images: ['/og.png'],
   },
   icons: {
     icon: '/game/favicon.svg',
