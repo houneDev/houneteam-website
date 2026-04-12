@@ -105,9 +105,12 @@ export default function Hero() {
           />
         ))}
 
-        {/* Game card — above everything */}
-        <div
-          className="absolute bottom-[24%] right-[13%] bg-[rgba(12,22,42,0.92)] border border-[rgba(124,199,255,0.16)] backdrop-blur-md rounded-2xl p-3.5 flex items-center gap-3 shadow-2xl"
+        {/* Game card — clickable, links to Google Play */}
+        <a
+          href="https://play.google.com/store/apps/details?id=com.houneteam.lumoidlepark"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute bottom-[24%] right-[13%] bg-[rgba(12,22,42,0.92)] border border-[rgba(124,199,255,0.16)] backdrop-blur-md rounded-2xl p-3.5 flex items-center gap-3 shadow-2xl transition-all duration-200 hover:border-[rgba(124,199,255,0.32)] hover:bg-[rgba(15,28,52,0.95)]"
           style={{ minWidth: 215, zIndex: 10 }}
         >
           <Image src="/game/game-icon.png" alt="Lumo Idle Park" width={50} height={50} className="rounded-xl flex-shrink-0" />
@@ -119,7 +122,7 @@ export default function Hero() {
               <span className="text-[#8896b8] text-[10px]">Android</span>
             </div>
           </div>
-        </div>
+        </a>
       </div>
 
       {/* ── LAYER 3: Text column ── */}
