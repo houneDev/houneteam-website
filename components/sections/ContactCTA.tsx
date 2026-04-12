@@ -80,11 +80,11 @@ export default function ContactCTA() {
             initial={{ opacity: 0, y: reduced ? 0 : 16 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.18, ease: ease.out }}
-            className="flex flex-wrap gap-3 md:flex-col md:items-start"
+            className="flex flex-wrap gap-3 md:flex-col md:items-stretch md:min-w-[220px]"
           >
             <a
               href="mailto:info@houneteam.com"
-              className="btn-primary"
+              className="btn-primary justify-center"
             >
               {t('contact.btn.touch')}
             </a>
@@ -92,7 +92,7 @@ export default function ContactCTA() {
               href={PLAY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-outline"
+              className="btn-outline justify-center"
             >
               <GooglePlayIcon />
               {t('contact.btn.play')}
