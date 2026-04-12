@@ -101,9 +101,9 @@ export default function GamesShowcase() {
             transition={{ duration: 0.4, ease: ease.out }}
             className="relative card-base p-8 md:p-10 overflow-hidden"
           >
-            {/* Glow behind the game icon */}
+            {/* Glow behind the game icon — desktop only */}
             <div
-              className="absolute pointer-events-none"
+              className="hidden md:block absolute pointer-events-none"
               style={{ top: '-60px', left: '-40px', width: 380, height: 380, zIndex: 0 }}
               aria-hidden="true"
             >
