@@ -134,22 +134,33 @@ export default function GamesShowcase() {
                     className="rounded-2xl object-cover shadow-lg"
                   />
                 </div>
+                {/* Items orbiting the icon on all 4 corners */}
+                <Image
+                  src="/game/fruit3.png"
+                  alt="" width={36} height={36}
+                  className="hidden md:block absolute -top-4 -left-3 animate-float-a no-drag"
+                  style={{ animationDelay: '-2.4s' }}
+                  aria-hidden="true"
+                />
+                <Image
+                  src="/game/gold.png"
+                  alt="" width={36} height={36}
+                  className="hidden md:block absolute -top-3 -right-4 animate-float-b no-drag"
+                  style={{ animationDelay: '-0.9s' }}
+                  aria-hidden="true"
+                />
                 <Image
                   src="/game/gem-pile.png"
-                  alt=""
-                  width={56}
-                  height={56}
-                  className="hidden md:block absolute -bottom-4 -right-6 animate-float-b no-drag"
+                  alt="" width={54} height={54}
+                  className="hidden md:block absolute -bottom-5 -left-4 animate-float-b no-drag"
                   style={{ animationDelay: '-1.2s' }}
                   aria-hidden="true"
                 />
                 <Image
-                  src="/game/fruit3.png"
-                  alt=""
-                  width={36}
-                  height={36}
-                  className="hidden md:block absolute -top-4 -right-3 animate-float-a no-drag"
-                  style={{ animationDelay: '-2.4s' }}
+                  src="/game/gem.png"
+                  alt="" width={32} height={32}
+                  className="hidden md:block absolute -bottom-3 -right-4 animate-float-a no-drag"
+                  style={{ animationDelay: '-3.6s' }}
                   aria-hidden="true"
                 />
               </div>

@@ -96,8 +96,7 @@ export default function AboutPreview() {
                   delay: 0.18 + i * 0.07,
                   ease: ease.out,
                 }}
-                // Slight vertical offset on middle card for asymmetry
-                style={{ marginTop: i === 1 ? 24 : 0 }}
+                style={{}}
                 className="card-base p-7 flex flex-col gap-4"
               >
                 <div
