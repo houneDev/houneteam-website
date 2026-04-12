@@ -1,12 +1,23 @@
 'use client'
 
 import Image from 'next/image'
-import { motion, useReducedMotion, useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { motion, useReducedMotion, useInView, AnimatePresence } from 'framer-motion'
+import { useRef, useState } from 'react'
 import { useI18n } from '@/lib/i18n'
 import { ease } from '@/lib/utils'
 
-const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.houneteam.lumoidlepark'
+const GAMES = [
+  {
+    id: 'lumo',
+    name: 'Lumo Idle Park',
+    icon: '/game/game-icon.png',
+    status: 'Live' as const,
+    platform: 'Android',
+    playUrl: 'https://play.google.com/store/apps/details?id=com.houneteam.lumoidlepark',
+    descKey: 'game.lumo.desc' as const,
+    featureKeys: ['game.lumo.f1', 'game.lumo.f2', 'game.lumo.f3', 'game.lumo.f4'] as const,
+  },
+]
 
 function GooglePlayIcon() {
   return (
@@ -16,18 +27,14 @@ function GooglePlayIcon() {
   )
 }
 
-const FEATURES_KEYS = [
-  'game.lumo.f1',
-  'game.lumo.f2',
-  'game.lumo.f3',
-  'game.lumo.f4',
-] as const
-
 export default function GamesShowcase() {
   const { t } = useI18n()
   const reduced = useReducedMotion() ?? false
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
+  const [activeId, setActiveId] = useState(GAMES[0].id)
+
+  const game = GAMES.find((g) => g.id === activeId) ?? GAMES[0]
 
   return (
     <section ref={ref} className="relative py-24 md:py-32">
@@ -58,89 +65,139 @@ export default function GamesShowcase() {
         </motion.p>
       </div>
 
-      <div className="max-w-[1240px] mx-auto px-6 mt-14">
+      {/* Game selector — only shown when multiple games exist */}
+      {GAMES.length > 1 && (
         <motion.div
-          initial={{ opacity: 0, y: reduced ? 0 : 24 }}
+          initial={{ opacity: 0, y: reduced ? 0 : 12 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.55, delay: 0.18, ease: ease.out }}
-          className="relative card-base p-8 md:p-10"
+          transition={{ duration: 0.45, delay: 0.16, ease: ease.out }}
+          className="max-w-[1240px] mx-auto px-6 mt-10 flex gap-3 flex-wrap"
         >
-          <div className="flex flex-col md:grid md:grid-cols-[auto_1fr] gap-8 md:gap-12 items-start">
-            {/* Icon — no floating items on mobile */}
-            <div className="relative flex-shrink-0 self-start">
-              <div className="relative w-[90px] h-[90px] md:w-[120px] md:h-[120px]">
+          {GAMES.map((g) => (
+            <button
+              key={g.id}
+              onClick={() => setActiveId(g.id)}
+              className={`flex items-center gap-2.5 px-4 py-2.5 rounded-xl border transition-all duration-200 ${
+                g.id === activeId
+                  ? 'bg-[rgba(124,199,255,0.1)] border-[rgba(124,199,255,0.3)] text-[#eef2ff]'
+                  : 'bg-transparent border-[rgba(124,199,255,0.08)] text-[#8896b8] hover:border-[rgba(124,199,255,0.18)] hover:text-[#c8d8f0]'
+              }`}
+            >
+              <Image src={g.icon} alt={g.name} width={28} height={28} className="rounded-lg" />
+              <span className="text-sm font-medium">{g.name}</span>
+            </button>
+          ))}
+        </motion.div>
+      )}
+
+      {/* Featured game card */}
+      <div className="max-w-[1240px] mx-auto px-6 mt-10">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={game.id}
+            initial={{ opacity: 0, y: reduced ? 0 : 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0 }}
+            exit={{ opacity: 0, y: reduced ? 0 : -12 }}
+            transition={{ duration: 0.4, ease: ease.out }}
+            className="relative card-base p-8 md:p-10 overflow-hidden"
+          >
+            {/* Glow behind the game icon */}
+            <div
+              className="absolute pointer-events-none"
+              style={{ top: '-60px', left: '-40px', width: 380, height: 380, zIndex: 0 }}
+              aria-hidden="true"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/game/glow.png"
+                alt=""
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'contain',
+                  opacity: 0.18,
+                  mixBlendMode: 'screen',
+                }}
+              />
+            </div>
+
+            <div className="relative z-10 flex flex-col md:grid md:grid-cols-[auto_1fr] gap-8 md:gap-12 items-start">
+              {/* Icon + floating ambient items */}
+              <div className="relative flex-shrink-0 self-start">
+                <div className="relative w-[90px] h-[90px] md:w-[120px] md:h-[120px]">
+                  <Image
+                    src={game.icon}
+                    alt={game.name}
+                    fill
+                    className="rounded-2xl object-cover shadow-lg"
+                  />
+                </div>
                 <Image
-                  src="/game/game-icon.png"
-                  alt="Lumo Idle Park icon"
-                  fill
-                  className="rounded-2xl object-cover shadow-lg"
+                  src="/game/gem-pile.png"
+                  alt=""
+                  width={56}
+                  height={56}
+                  className="hidden md:block absolute -bottom-4 -right-6 animate-float-b no-drag"
+                  style={{ animationDelay: '-1.2s' }}
+                  aria-hidden="true"
+                />
+                <Image
+                  src="/game/fruit3.png"
+                  alt=""
+                  width={36}
+                  height={36}
+                  className="hidden md:block absolute -top-4 -right-3 animate-float-a no-drag"
+                  style={{ animationDelay: '-2.4s' }}
+                  aria-hidden="true"
                 />
               </div>
-              {/* Floating ambient items — desktop only */}
-              <Image
-                src="/game/gem-pile.png"
-                alt=""
-                width={56}
-                height={56}
-                className="hidden md:block absolute -bottom-4 -right-6 animate-float-b no-drag"
-                style={{ animationDelay: '-1.2s' }}
-                aria-hidden="true"
-              />
-              <Image
-                src="/game/fruit3.png"
-                alt=""
-                width={36}
-                height={36}
-                className="hidden md:block absolute -top-4 -right-3 animate-float-a no-drag"
-                style={{ animationDelay: '-2.4s' }}
-                aria-hidden="true"
-              />
-            </div>
 
-            {/* Content */}
-            <div>
-              <div className="flex flex-wrap items-center gap-3 mb-4">
-                <h3 className="text-[#eef2ff] text-xl md:text-2xl font-bold">Lumo Idle Park</h3>
-                <span className="px-2.5 py-1 rounded-full bg-[rgba(74,222,128,0.1)] border border-[rgba(74,222,128,0.2)] text-[#4ade80] text-xs font-semibold">
-                  Live
-                </span>
-                <span className="px-2.5 py-1 rounded-full bg-[rgba(124,199,255,0.07)] border border-[rgba(124,199,255,0.12)] text-[#8896b8] text-xs">
-                  Android
-                </span>
-              </div>
-
-              <p className="text-[#8896b8] text-sm md:text-base leading-relaxed max-w-[560px]">
-                {t('game.lumo.desc')}
-              </p>
-
-              <ul className="mt-6 grid sm:grid-cols-2 gap-x-8 gap-y-3">
-                {FEATURES_KEYS.map((key) => (
-                  <li key={key} className="flex items-start gap-2.5">
-                    <span className="mt-1 flex-shrink-0 w-4 h-4 rounded-full bg-[rgba(124,199,255,0.12)] flex items-center justify-center">
-                      <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
-                        <path d="M1.5 4l2 2 3-3" stroke="#7cc7ff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
+              {/* Content */}
+              <div>
+                <div className="flex flex-wrap items-center gap-3 mb-4">
+                  <h3 className="text-[#eef2ff] text-xl md:text-2xl font-bold">{game.name}</h3>
+                  {game.status === 'Live' && (
+                    <span className="px-2.5 py-1 rounded-full bg-[rgba(74,222,128,0.1)] border border-[rgba(74,222,128,0.2)] text-[#4ade80] text-xs font-semibold">
+                      Live
                     </span>
-                    <span className="text-[#8896b8] text-sm leading-snug">{t(key)}</span>
-                  </li>
-                ))}
-              </ul>
+                  )}
+                  <span className="px-2.5 py-1 rounded-full bg-[rgba(124,199,255,0.07)] border border-[rgba(124,199,255,0.12)] text-[#8896b8] text-xs">
+                    {game.platform}
+                  </span>
+                </div>
 
-              <div className="mt-8">
-                <a
-                  href={PLAY_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary inline-flex"
-                >
-                  <GooglePlayIcon />
-                  {t('game.btn.play')}
-                </a>
+                <p className="text-[#8896b8] text-sm md:text-base leading-relaxed max-w-[560px]">
+                  {t(game.descKey)}
+                </p>
+
+                <ul className="mt-6 grid sm:grid-cols-2 gap-x-8 gap-y-3">
+                  {game.featureKeys.map((key) => (
+                    <li key={key} className="flex items-start gap-2.5">
+                      <span className="mt-1 flex-shrink-0 w-4 h-4 rounded-full bg-[rgba(124,199,255,0.12)] flex items-center justify-center">
+                        <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
+                          <path d="M1.5 4l2 2 3-3" stroke="#7cc7ff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </span>
+                      <span className="text-[#8896b8] text-sm leading-snug">{t(key)}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-8">
+                  <a
+                    href={game.playUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary inline-flex"
+                  >
+                    <GooglePlayIcon />
+                    {t('game.btn.play')}
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-
-        </motion.div>
+          </motion.div>
+        </AnimatePresence>
       </div>
     </section>
   )

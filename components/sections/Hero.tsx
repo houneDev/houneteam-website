@@ -66,14 +66,6 @@ export default function Hero() {
           <div>
             <p className="text-[#eef2ff] text-sm font-semibold leading-tight">Lumo Idle Park</p>
             <p className="text-[#7cc7ff] text-xs mt-0.5">{t('hero.showcase.sub')}</p>
-            <div className="flex items-center gap-1 mt-1">
-              {[1,2,3,4,5].map((s) => (
-                <svg key={s} width="10" height="10" viewBox="0 0 10 10" fill="#fbbf24">
-                  <polygon points="5,1 6.2,3.8 9.5,4.1 7.1,6.2 7.8,9.5 5,7.9 2.2,9.5 2.9,6.2 0.5,4.1 3.8,3.8" />
-                </svg>
-              ))}
-              <span className="text-[#8896b8] text-[10px] ml-1">5.0</span>
-            </div>
           </div>
         </div>
       </div>
