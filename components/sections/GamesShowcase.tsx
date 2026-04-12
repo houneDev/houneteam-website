@@ -101,10 +101,12 @@ export default function GamesShowcase() {
             transition={{ duration: 0.4, ease: ease.out }}
             className="relative card-base p-8 md:p-10 overflow-hidden"
           >
-            {/* Glow behind the game icon — desktop only */}
+            {/* Glow centered behind the game icon — desktop only.
+                Icon center: padding(40px) + iconSize/2(60px) = 100px from card edge.
+                Glow 360px wide: offset = 100 - 180 = -80px → center lands on icon. */}
             <div
               className="hidden md:block absolute pointer-events-none"
-              style={{ top: '-60px', left: '-40px', width: 380, height: 380, zIndex: 0 }}
+              style={{ top: '-80px', left: '-80px', width: 360, height: 360, zIndex: 0 }}
               aria-hidden="true"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -115,7 +117,7 @@ export default function GamesShowcase() {
                   width: '100%',
                   height: '100%',
                   objectFit: 'contain',
-                  opacity: 0.18,
+                  opacity: 0.22,
                   mixBlendMode: 'screen',
                 }}
               />
