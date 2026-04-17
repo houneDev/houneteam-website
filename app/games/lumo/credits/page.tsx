@@ -67,7 +67,7 @@ export default function LumoCreditsPage() {
               info@houneteam.com
             </a>
           </span>
-          <span>Last updated: <strong className="text-[#c7d2ee]">March 25, 2026</strong></span>
+          <span>Last updated: <strong className="text-[#c7d2ee]">April 17, 2026</strong></span>
         </div>
       </motion.div>
 
