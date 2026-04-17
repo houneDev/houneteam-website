@@ -111,21 +111,7 @@ export default function LumoCreditsPage() {
             </a>.
           </p>
 
-          <h3 className="text-[#c7d2ee] text-sm font-semibold mb-2">App icon</h3>
-          <CreditBlock>
-            <Row label="Author">
-              <a href="https://www.flaticon.com/authors/freepik" target="_blank" rel="noopener noreferrer" className="text-[#7cc7ff] underline underline-offset-2 hover:opacity-75 transition-opacity duration-150">
-                Freepik
-              </a>
-            </Row>
-            <Row label="Source">
-              <a href="https://www.flaticon.com" target="_blank" rel="noopener noreferrer" className="text-[#7cc7ff] underline underline-offset-2 hover:opacity-75 transition-opacity duration-150">
-                www.flaticon.com
-              </a>
-            </Row>
-          </CreditBlock>
-
-          <h3 className="text-[#c7d2ee] text-sm font-semibold mb-2 mt-4">Loading arrow icon</h3>
+          <h3 className="text-[#c7d2ee] text-sm font-semibold mb-2">Loading arrow icon</h3>
           <CreditBlock>
             <Row label="Author">
               <a href="https://www.flaticon.com/authors/laisa-islam-ani" target="_blank" rel="noopener noreferrer" className="text-[#7cc7ff] underline underline-offset-2 hover:opacity-75 transition-opacity duration-150">
