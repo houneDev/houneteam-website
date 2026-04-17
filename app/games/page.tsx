@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useI18n } from '@/lib/i18n'
 import { ease } from '@/lib/utils'
@@ -122,7 +123,7 @@ export default function GamesPage() {
                 <p className="text-[#8896b8] text-sm md:text-base leading-relaxed max-w-[600px]">
                   {t('game.lumo.desc')}
                 </p>
-                <div className="mt-6 flex flex-wrap gap-3">
+                <div className="mt-6 flex flex-wrap gap-3 items-center">
                   <a
                     href={PLAY_URL}
                     target="_blank"
@@ -132,6 +133,12 @@ export default function GamesPage() {
                     <GooglePlayIcon />
                     {t('game.btn.play')}
                   </a>
+                  <Link
+                    href="/games/lumo/credits"
+                    className="text-xs text-[#8896b8] hover:text-[#7cc7ff] transition-colors duration-150 underline underline-offset-2"
+                  >
+                    Credits
+                  </Link>
                 </div>
               </div>
             </div>
