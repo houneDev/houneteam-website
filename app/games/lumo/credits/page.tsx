@@ -166,6 +166,21 @@ export default function LumoCreditsPage() {
               </a>
             </Row>
           </CreditBlock>
+
+          <h3 className="text-[#c7d2ee] text-sm font-semibold mb-2 mt-4">Backpack icon</h3>
+          <CreditBlock>
+            <Row label="Author">
+              <a href="https://www.flaticon.com/authors/syahrul-hidayatullah" target="_blank" rel="noopener noreferrer" className="text-[#7cc7ff] underline underline-offset-2 hover:opacity-75 transition-opacity duration-150">
+                Syahrul Hidayatullah
+              </a>
+            </Row>
+            <Row label="Source">
+              <a href="https://www.flaticon.com" target="_blank" rel="noopener noreferrer" className="text-[#7cc7ff] underline underline-offset-2 hover:opacity-75 transition-opacity duration-150">
+                www.flaticon.com
+              </a>
+            </Row>
+            <Row label="License">Flaticon License (free for personal and commercial use with attribution)</Row>
+          </CreditBlock>
         </section>
 
         {/* 3. Third-party services */}
