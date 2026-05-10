@@ -17,6 +17,13 @@ const FEATURE_KEYS = [
   'game.lumo.f4',
 ] as const
 
+const SNOW_FEATURE_KEYS = [
+  'game.snow.f1',
+  'game.snow.f2',
+  'game.snow.f3',
+  'game.snow.f4',
+] as const
+
 function GooglePlayIcon({ size = 20 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 512 512" fill="currentColor" aria-hidden="true">
@@ -149,6 +156,84 @@ export default function GamesPage() {
             <h3 className="text-[#eef2ff] font-semibold text-lg mb-6">Features</h3>
             <ul className="grid sm:grid-cols-2 gap-x-10 gap-y-4">
               {FEATURE_KEYS.map((key) => (
+                <li key={key} className="flex items-start gap-3">
+                  <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-[rgba(124,199,255,0.12)] flex items-center justify-center">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                      <path d="M2 5l2.5 2.5 3.5-4" stroke="#7cc7ff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </span>
+                  <span className="text-[#8896b8] text-sm leading-snug">{t(key)}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Lumo Snow Rush — in development */}
+      <div className="max-w-[1240px] mx-auto px-6 pb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, delay: 0.22, ease: ease.out }}
+          className="card-base overflow-hidden"
+        >
+          {/* Hero area */}
+          <div className="relative p-8 md:p-12 border-b border-[rgba(124,199,255,0.06)] overflow-hidden">
+            {/* Glow centered behind icon */}
+            <div
+              className="hidden md:block absolute pointer-events-none"
+              style={{ top: '-60px', left: '-60px', width: 360, height: 360, zIndex: 0 }}
+              aria-hidden="true"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/game/glow.png"
+                alt=""
+                style={{ width: '100%', height: '100%', objectFit: 'contain', opacity: 0.22, mixBlendMode: 'screen' }}
+              />
+            </div>
+
+            <div className="relative z-10 flex flex-col md:flex-row md:items-start gap-8">
+              {/* Icon */}
+              <div className="relative flex-shrink-0 w-[120px] h-[120px]">
+                <Image
+                  src="/game/snow-rush-icon.png"
+                  alt="Lumo Snow Rush"
+                  fill
+                  className="rounded-3xl object-cover shadow-xl"
+                />
+              </div>
+
+              <div>
+                <div className="flex flex-wrap items-center gap-3 mb-3">
+                  <h2 className="text-[#eef2ff] text-2xl md:text-3xl font-bold">Lumo Snow Rush</h2>
+                  <span className="px-2.5 py-1 rounded-full bg-[rgba(251,191,36,0.1)] border border-[rgba(251,191,36,0.25)] text-[#fbbf24] text-xs font-semibold">
+                    {t('game.status.dev')}
+                  </span>
+                </div>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {['Arcade', 'Casual', 'Android'].map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-2.5 py-1 rounded-full bg-[rgba(124,199,255,0.06)] border border-[rgba(124,199,255,0.1)] text-[#8896b8] text-xs"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <p className="text-[#8896b8] text-sm md:text-base leading-relaxed max-w-[600px]">
+                  {t('game.snow.desc')}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Features */}
+          <div className="p-8 md:p-12">
+            <h3 className="text-[#eef2ff] font-semibold text-lg mb-6">Features</h3>
+            <ul className="grid sm:grid-cols-2 gap-x-10 gap-y-4">
+              {SNOW_FEATURE_KEYS.map((key) => (
                 <li key={key} className="flex items-start gap-3">
                   <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-[rgba(124,199,255,0.12)] flex items-center justify-center">
                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
