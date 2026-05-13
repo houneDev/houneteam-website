@@ -108,7 +108,7 @@ export default function Hero() {
         {/* Snow Rush card — in development, links to /games */}
         <Link
           href="/games"
-          className="absolute bottom-[36%] right-[13%] bg-[rgba(12,22,42,0.92)] border border-[rgba(124,199,255,0.16)] backdrop-blur-md rounded-2xl p-3.5 flex items-center gap-3 shadow-2xl transition-all duration-200 hover:border-[rgba(124,199,255,0.32)] hover:bg-[rgba(15,28,52,0.95)]"
+          className="absolute bottom-[40%] right-[13%] bg-[rgba(12,22,42,0.92)] border border-[rgba(124,199,255,0.16)] backdrop-blur-md rounded-2xl p-3.5 flex items-center gap-3 shadow-2xl transition-all duration-200 hover:border-[rgba(124,199,255,0.32)] hover:bg-[rgba(15,28,52,0.95)]"
           style={{ width: 240, zIndex: 10 }}
         >
           <Image src="/game/snow-rush-icon.png" alt="Lumo Snow Rush" width={50} height={50} className="rounded-xl flex-shrink-0" />
