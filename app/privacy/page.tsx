@@ -11,155 +11,241 @@ export default function PrivacyPage() {
       kicker={t('privacy.kicker')}
       title={t('privacy.title')}
       desc={t('privacy.desc')}
-      effectiveDate="2025-01-01"
+      effectiveDate="2026-05-13"
     >
       <div className="legal-content">
         <section>
           <h2>1. Summary</h2>
-          <p>Our games use analytics, ad-delivery, and local device storage to operate, improve gameplay balance, understand crashes and session flow, measure ad performance, and support features such as offline income. Some information is stored only on the player&apos;s device, while some information is processed by third-party service providers.</p>
-          <p>This policy explains what categories of data are collected, how the data is used, what third parties may process it, and what choices players may have depending on their device, platform, and region.</p>
+          <p>HouneTeam makes casual mobile games published on Google Play and the Apple App Store. To operate our games and improve them, we integrate third-party SDKs for analytics, crash reporting, advertising mediation, install attribution, push notifications, and cloud saves.</p>
+          <p>This Privacy Policy lists every category of data we or our integrated providers collect, what each provider does with it, how long we retain it, what choices you have, and who to contact. It applies to all HouneTeam games, including <strong>Lumo Idle Park</strong>, unless a specific game&apos;s store listing or in-app notice states otherwise.</p>
+          <p><strong>HouneTeam</strong> is the data controller for the data collected through our games. Contact: <a href="mailto:info@houneteam.com">info@houneteam.com</a>. Jurisdiction: Japan.</p>
         </section>
 
         <section>
           <h2>2. Information we collect</h2>
+
           <h3>2.1 Information you provide directly</h3>
           <ul>
-            <li>If you contact us by email, we may receive your email address, the contents of your message, and any attachments or information you choose to send.</li>
-            <li>If you choose to connect your Google Play Games account on Android to enable cloud save, we may receive your Google Play Games player ID and display name in order to associate your save data with your account.</li>
+            <li>If you contact us by email, we receive your email address, the contents of your message, and any attachments you choose to send.</li>
+            <li>On Android, if you sign into <strong>Google Play Games Services</strong> to enable cloud save, we receive your Play Games player ID and display name.</li>
+            <li>On iOS, if you sign into <strong>Apple Game Center</strong>, we receive your Game Center player ID.</li>
           </ul>
-          <p>Connecting a Google Play Games account is optional. The core gameplay does not require you to sign in. Our games do not require you to create an account with us or directly submit your real name, postal address, or phone number to play.</p>
+          <p>Sign-in is optional. Core gameplay does not require an account. We do not ask for your real name, postal address, or phone number.</p>
+
           <h3>2.2 Gameplay and telemetry events</h3>
+          <p>Our games send anonymous gameplay events to Firebase Analytics so we can balance the game, find broken progression paths, and understand where players get stuck. Typical events include:</p>
           <ul>
             <li>Session number, session start time, and session duration.</li>
-            <li>Whether a session ended normally or after an unexpected interruption or crash-related event.</li>
-            <li>Boost and power-up usage within a session.</li>
-            <li>First-launch time, total play time, upgrade purchases, upgrade levels, and the timing of unlocks or purchases relative to first launch.</li>
-            <li>Which game objects or content were unlocked and when they were unlocked.</li>
-            <li>Economy milestones, such as when players reach certain currency thresholds.</li>
-            <li>Offline-income claim information, including reward amount and offline time.</li>
-            <li>Return-to-game timing information, such as how long the player was absent before opening the game again.</li>
-            <li>Advertising outcome events such as whether a rewarded advertisement was watched to completion or was requested but unavailable.</li>
+            <li>Whether a session ended normally or after an interruption or crash.</li>
+            <li>Boost and power-up usage.</li>
+            <li>First-launch time, total play time, upgrade levels, and the timing of unlocks or purchases.</li>
+            <li>Which game objects were unlocked and when.</li>
+            <li>Economy milestones (when a player reaches certain currency thresholds).</li>
+            <li>Offline-income claim information (reward amount and offline duration).</li>
+            <li>Return-to-game timing (how long a player was absent before re-opening the game).</li>
+            <li>Ad outcome events: whether a rewarded ad was watched to completion, requested but unavailable, or skipped.</li>
+            <li>In-app purchase events (product ID, success/failure &mdash; no card or bank information).</li>
           </ul>
-          <h3>2.3 Information collected automatically by integrated third parties</h3>
+
+          <h3>2.3 Information collected automatically by integrated SDKs</h3>
           <ul>
             <li>Device model, operating system version, app version, language, approximate country or region, and time zone.</li>
-            <li>Install source or distribution source information where available.</li>
-            <li>Anonymous or pseudonymous identifiers used by analytics or advertising SDKs.</li>
-            <li>Ad interaction information, including ad requests, impressions, clicks, reward completion, and fraud-prevention signals.</li>
-            <li>IP address and approximate geolocation derived from IP by service providers.</li>
+            <li>Install source / install referrer where available.</li>
+            <li>Pseudonymous identifiers used by analytics, attribution, and advertising SDKs (see §5 for the per-SDK list).</li>
+            <li>Advertising identifiers: Apple IDFA on iOS (only when you have granted App Tracking Transparency permission) and Google Advertising ID (GAID) on Android (unless you have opted out at the OS level).</li>
+            <li>Ad interaction data: ad requests, impressions, clicks, video completion, reward grants, and fraud-prevention signals.</li>
+            <li>IP address, used in transit by service providers and converted to approximate geolocation at the city or country level.</li>
             <li>Crash and error reports collected by Firebase Crashlytics, including stack traces, exception types, device state at the time of the crash, app version, OS version, device model, and a Crashlytics installation UUID.</li>
+            <li>Push notification tokens (APNs token on iOS, FCM token on Android) used to deliver push notifications via Firebase Cloud Messaging.</li>
+            <li>A Firebase Installations ID used to identify the installation for analytics and remote config.</li>
+            <li>A device-attestation result from Firebase App Check used to prevent backend abuse (no personal data is sent; only an attestation token derived from Play Integrity on Android or DeviceCheck / App Attest on iOS).</li>
           </ul>
-          <h3>2.4 Information stored locally on the player&apos;s device</h3>
+
+          <h3>2.4 Information stored locally on your device</h3>
           <ul>
-            <li>Session snapshot data used to calculate offline income or restore gameplay state.</li>
-            <li>Pending offline reward values stored until the player claims them.</li>
-            <li>Other local save information required for gameplay progression and settings.</li>
+            <li>Session snapshot data used to calculate offline income and restore gameplay state.</li>
+            <li>Pending offline reward values until claimed.</li>
+            <li>Local save state, game settings, language preference, and similar progression data.</li>
+            <li>Cached Remote Config values used to override game balance without a new release.</li>
           </ul>
         </section>
 
         <section>
           <h2>3. How we use information</h2>
           <ul>
-            <li>To operate our games and core gameplay systems.</li>
+            <li>To operate game systems, including offline income, cloud saves, and remote balancing.</li>
+            <li>To diagnose crashes, ad-load failures, and performance issues.</li>
             <li>To analyze retention, progression, economy balance, and feature usage.</li>
-            <li>To diagnose technical problems, crashes, failed ad loads, and performance issues.</li>
-            <li>To show advertisements, measure ad performance, and help prevent fraud or invalid traffic.</li>
-            <li>To support local saves, offline-income systems, and cloud save functionality.</li>
-            <li>To respond to player messages, support questions, or privacy requests.</li>
-            <li>To comply with legal obligations and enforce our Terms of Service.</li>
+            <li>To serve advertising, measure ad performance, attribute installs to ad campaigns, and prevent ad fraud.</li>
+            <li>To deliver push notifications you have opted into.</li>
+            <li>To process in-app purchases via the relevant platform store.</li>
+            <li>To respond to your messages and to legal or platform requests.</li>
+            <li>To comply with our legal obligations and enforce our Terms of Service.</li>
           </ul>
+          <p>Legal bases under GDPR are described in §11.</p>
         </section>
 
         <section>
           <h2>4. How we share information</h2>
-          <p>We may share or make information available to the following categories of recipients:</p>
+          <p>We share data with the following categories of recipients:</p>
           <ul>
-            <li><strong>Service providers and SDK providers</strong>, including Google Firebase and Google AdMob, to provide analytics, diagnostics, advertising, measurement, hosting, fraud prevention, and related services.</li>
-            <li><strong>Platform providers</strong>, such as Google Play or Apple platform services, where necessary for distribution, cloud save, platform compliance, or account-linked platform features.</li>
-            <li><strong>Authorities or other parties</strong> where disclosure is required by law, regulation, legal process, or to protect rights, security, or the integrity of the service.</li>
+            <li><strong>Service providers / processors</strong> &mdash; Firebase (Google), AppsFlyer, Unity LevelPlay (IronSource), and the ad networks listed in §5, acting on our instructions.</li>
+            <li><strong>Platform providers</strong> &mdash; Google (Play Store, Play Games Services, Play Billing) and Apple (App Store, Game Center, App Store payments) for distribution, sign-in, and purchase processing.</li>
+            <li><strong>Authorities</strong> when disclosure is required by law, regulation, or legal process, or to protect rights, security, or service integrity.</li>
           </ul>
-          <p>We do not sell personal information for money. If our practices materially change, we will update this Privacy Policy before applying the new practice.</p>
+          <p>We do <strong>not</strong> sell personal information for money. Some of our advertising and measurement activities may qualify as &quot;sharing&quot; or &quot;sale&quot; under certain US state privacy laws because data is shared with ad partners for cross-context behavioral advertising; see §12 for how to opt out.</p>
         </section>
 
         <section>
-          <h2>5. Third-party services</h2>
-          <p>Our games may use the following third-party service providers:</p>
+          <h2>5. Third-party services and SDKs</h2>
+          <p>The following SDKs are integrated into our games. We list each provider, what data is processed, and a link to that provider&apos;s own privacy policy.</p>
+
+          <h3>5.1 Firebase (Google LLC / Google Ireland Limited)</h3>
           <ul>
-            <li><strong>Google Firebase</strong> (including Firebase Analytics and Firebase Crashlytics) for analytics, crash reporting, diagnostics, and related infrastructure.</li>
-            <li><strong>Google AdMob</strong> for advertising, monetization, measurement, and fraud prevention.</li>
-            <li><strong>Google Play Games Services</strong> on Android for cloud save authentication and player identification; <strong>Firebase Firestore</strong> for cloud save data storage and synchronization.</li>
-            <li><strong>Apple CloudKit / iCloud</strong> on iOS for cloud save synchronization, where applicable.</li>
+            <li><strong>Firebase Analytics</strong> &mdash; usage events, Firebase Installations ID, device info, approximate geolocation.</li>
+            <li><strong>Firebase Crashlytics</strong> &mdash; crash stack traces, device state, Crashlytics installation UUID.</li>
+            <li><strong>Firebase Firestore</strong> &mdash; cloud saves, player profile, in-game gifts.</li>
+            <li><strong>Firebase Authentication</strong> &mdash; pseudonymous user ID used to bind cloud saves to your platform sign-in.</li>
+            <li><strong>Firebase Cloud Messaging (FCM)</strong> &mdash; APNs / FCM push tokens, message delivery receipts.</li>
+            <li><strong>Firebase Remote Config</strong> &mdash; fetches server-side game balance values; no personal data is sent beyond the Installations ID.</li>
+            <li><strong>Firebase App Check</strong> &mdash; device attestation token (Play Integrity / App Attest) to protect backend endpoints; no personal data leaves the device.</li>
           </ul>
-          <p>Relevant official resources:</p>
+          <p>Links: <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer" target="_blank">Firebase Privacy and Security</a> · <a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">Google Privacy Policy</a> · <a href="https://firebase.google.com/docs/crashlytics/data-collection" rel="noopener noreferrer" target="_blank">Crashlytics Data Collection</a></p>
+
+          <h3>5.2 AppsFlyer (AppsFlyer Ltd., Israel)</h3>
+          <p>We use AppsFlyer for mobile measurement and install attribution.</p>
           <ul>
-            <li><a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">Google Privacy Policy</a></li>
-            <li><a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer" target="_blank">Firebase Privacy and Security</a></li>
-            <li><a href="https://firebase.google.com/docs/crashlytics/data-collection" rel="noopener noreferrer" target="_blank">Firebase Crashlytics Data Collection</a></li>
-            <li><a href="https://support.google.com/admob/answer/6128543" rel="noopener noreferrer" target="_blank">AdMob Policies and Restrictions</a></li>
-            <li><a href="https://developer.android.com/games/pgs/savedgames" rel="noopener noreferrer" target="_blank">Google Play Games Saved Games</a></li>
-            <li><a href="https://developer.apple.com/icloud/cloudkit/" rel="noopener noreferrer" target="_blank">Apple CloudKit</a></li>
+            <li>Apple IDFA (iOS, if ATT permission granted) or Google Advertising ID (Android).</li>
+            <li>Install referrer (Android) or SKAdNetwork postback copy (iOS).</li>
+            <li>IP address, used in transit to derive country and detect fraud.</li>
+            <li>Device model, OS version, app version, language, time zone.</li>
+            <li>In-app events you trigger (purchases, ad views, level completions) for measurement.</li>
           </ul>
+          <p>AppsFlyer&apos;s iOS Privacy Manifest declares the following tracking domains: <code>app.appsflyer.com</code>, <code>events.appsflyer.com</code>, <code>register.appsflyer.com</code>, <code>sdk-services.appsflyer.com</code>, <code>appsflyer-skadnetwork.com</code>.</p>
+          <p>Links: <a href="https://www.appsflyer.com/legal/privacy-policy/" rel="noopener noreferrer" target="_blank">AppsFlyer Privacy Policy</a> · <a href="https://www.appsflyer.com/legal/services-privacy-policy/" rel="noopener noreferrer" target="_blank">AppsFlyer Services Privacy Policy</a> · <a href="https://www.appsflyer.com/legal/opt-out/" rel="noopener noreferrer" target="_blank">AppsFlyer Opt-Out</a></p>
+
+          <h3>5.3 Unity LevelPlay / IronSource (ironSource Ltd., a Unity company)</h3>
+          <p>We use Unity LevelPlay (formerly IronSource Mediation) to orchestrate ad delivery across multiple ad networks. The mediation SDK and the integrated ad networks process advertising identifiers and ad interaction data.</p>
+          <p>Mediated ad networks currently include:</p>
+          <ul>
+            <li><strong>IronSource</strong> (Unity company) &mdash; direct ad serving.</li>
+            <li><strong>Unity Ads</strong> &mdash; bidder.</li>
+            <li><strong>Google AdMob</strong> &mdash; bidder.</li>
+          </ul>
+          <p>Data processed by LevelPlay and the mediated networks: IDFA / GAID, ad opportunity context, bid responses, impressions, clicks, video completion, rewarded grants, IP address (in transit), device model, OS version, app version, and approximate geolocation.</p>
+          <p>Links: <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" rel="noopener noreferrer" target="_blank">Unity Game Player and App User Privacy Policy</a> · <a href="https://developers.is.com/ironsource-mobile/air/ironsource-ccpa-compliance/" rel="noopener noreferrer" target="_blank">IronSource US State Privacy</a> · <a href="https://support.google.com/admob/answer/6128543" rel="noopener noreferrer" target="_blank">AdMob Policies and Restrictions</a></p>
+
+          <h3>5.4 Google Play Games / Apple Game Center</h3>
+          <ul>
+            <li>On Android, <strong>Google Play Games Services</strong> handles optional sign-in. We receive Play Games player ID and display name.</li>
+            <li>On iOS, <strong>Apple Game Center</strong> handles optional sign-in. We receive a Game Center player ID.</li>
+          </ul>
+          <p>Links: <a href="https://developer.android.com/games/pgs/savedgames" rel="noopener noreferrer" target="_blank">Google Play Games Saved Games</a> · <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer" target="_blank">Apple Privacy</a></p>
+
+          <h3>5.5 In-app purchases</h3>
+          <p>Purchases are processed by <strong>Google Play Billing</strong> on Android and by the <strong>Apple App Store</strong> on iOS. We receive a transaction ID and the receipt necessary to verify entitlement, but we do not receive your card number, bank details, or full billing address.</p>
         </section>
 
         <section>
           <h2>6. Advertising identifiers and ad personalization</h2>
-          <p>Our games may use advertising identifiers to support personalized or non-personalized ads, subject to platform settings and any consent flows required by law.</p>
-          <p>Players can typically limit ad tracking, reset the advertising identifier, or disable personalized advertising through their device and platform settings.</p>
-          <p>In some regions, players may also see a consent message before personalized advertising or certain local-storage based ad functions are used, where required by law or platform policy.</p>
+
+          <h3>6.1 iOS &mdash; App Tracking Transparency (ATT)</h3>
+          <p>On iOS, before any third-party SDK accesses your Apple IDFA or links your activity across apps and websites for advertising or measurement, our games show the system <strong>App Tracking Transparency</strong> prompt. If you choose &quot;Ask App Not to Track,&quot; AppsFlyer and our ad partners will not receive your IDFA and will rely on aggregated frameworks such as SKAdNetwork for measurement. You can change your choice at any time in <em>Settings → Privacy &amp; Security → Tracking</em>.</p>
+
+          <h3>6.2 Android &mdash; Advertising ID and Privacy Sandbox</h3>
+          <p>On Android, our ad partners may use your Google Advertising ID for personalized advertising and measurement. You can reset or delete the advertising ID and opt out of personalized advertising in <em>Settings → Google → Ads</em> (or <em>Settings → Privacy → Ads</em>, depending on the device). On devices that support Android Privacy Sandbox, the platform may further constrain or replace ID-based targeting.</p>
+
+          <h3>6.3 Consent for personalized advertising (EEA / UK)</h3>
+          <p>In the EEA, the UK, and other regions where consent is required, our games display a consent message before personalized advertising or non-essential analytics. You can change your choice at any time through the in-game privacy settings, where available, or by reinstalling the app.</p>
         </section>
 
         <section>
-          <h2>7. Cloud saves</h2>
-          <h3>7.1 Android cloud saves via Google Play Games and Firebase Firestore</h3>
-          <p>On Android, players may optionally connect their Google Play Games account to enable cloud save in supported games. When connected, save data is stored and synchronized through Firebase Firestore using the player&apos;s Google Play Games player ID.</p>
-          <p>Connecting a Google Play Games account is optional. If the player does not sign in, saves remain local to the device only.</p>
-          <h3>7.2 iOS cloud saves via Apple CloudKit / iCloud</h3>
-          <p>Where supported on iOS, save data may be synchronized through Apple CloudKit / iCloud. This may include game progression, save-state records, timestamps, and data needed to keep the player&apos;s progress in sync across Apple devices.</p>
-        </section>
-
-        <section>
-          <h2>8. Data retention</h2>
+          <h2>7. Push notifications</h2>
+          <p>If you allow notifications, our games use Firebase Cloud Messaging (FCM) to deliver them. FCM stores your APNs token (iOS) or FCM token (Android) so it can route messages to your device. You can disable notifications at any time in the system settings:</p>
           <ul>
-            <li>Local save and offline-income data generally remains on the player&apos;s device until the app is uninstalled or device storage is cleared.</li>
-            <li>Email or support messages sent directly to us may be retained for as long as reasonably necessary.</li>
-            <li>Analytics, advertising, and related telemetry may be retained by third-party providers according to their own retention policies.</li>
-            <li>Cloud-save data may remain in the player&apos;s Google or Apple account environment until deleted according to platform behavior.</li>
+            <li>iOS: <em>Settings → Notifications → [game name]</em></li>
+            <li>Android: <em>Settings → Apps → [game name] → Notifications</em></li>
           </ul>
         </section>
 
         <section>
-          <h2>9. International processing</h2>
-          <p>Third-party providers that support our games may process information on servers located in various countries. Information may be transferred outside the player&apos;s country or region.</p>
+          <h2>8. Cloud saves</h2>
+          <p>Cloud saves are <strong>optional</strong>. If you do not sign in, your progress remains only on your device.</p>
+          <ul>
+            <li><strong>Android:</strong> after you sign into Google Play Games Services, save data is written to Firebase Firestore under a Firebase Authentication user ID linked to your Play Games account. Saved data includes progression, currencies, upgrade state, and timestamps.</li>
+            <li><strong>iOS:</strong> after you sign into Apple Game Center, save data is written to Firebase Firestore under a Firebase Authentication user ID linked to your Game Center player ID. Saved data is the same as on Android.</li>
+          </ul>
+          <p>HouneTeam does <strong>not</strong> use Apple CloudKit / iCloud for cloud saves. All cloud-save data is stored in Firebase Firestore (Google Cloud).</p>
         </section>
 
         <section>
-          <h2>10. Your rights and choices</h2>
+          <h2>9. Data retention</h2>
           <ul>
-            <li>Players may contact us to request access to, deletion of, or additional information about data we control, where applicable.</li>
-            <li>Players may manage advertising preferences through device and platform controls.</li>
-            <li>Where consent is used for certain advertising or analytics activities, players may be able to change or withdraw those choices through the relevant consent interface or device settings.</li>
-            <li>Local gameplay data can generally be removed by uninstalling the app or clearing app storage on the device.</li>
+            <li><strong>Local save and offline-income data</strong> &mdash; stored on your device until the app is uninstalled or app storage is cleared.</li>
+            <li><strong>Cloud saves in Firestore</strong> &mdash; retained while the linked account exists so you can resume later. On request to <a href="mailto:info@houneteam.com">info@houneteam.com</a>, we delete the record within 30 days.</li>
+            <li><strong>Firebase Analytics events</strong> &mdash; retained for up to 14 months by default; aggregated, non-identifying reports may be retained longer.</li>
+            <li><strong>Firebase Crashlytics</strong> &mdash; crash records retained for up to 90 days.</li>
+            <li><strong>FCM push tokens</strong> &mdash; kept until the token is revoked, the app is uninstalled, or the token rotates.</li>
+            <li><strong>AppsFlyer attribution data</strong> &mdash; retained according to AppsFlyer&apos;s standard retention (typically up to 24 months for raw data; longer for aggregated reports). See the AppsFlyer policy linked in §5.2.</li>
+            <li><strong>Ad-network logs (LevelPlay, IronSource, Unity Ads, AdMob)</strong> &mdash; retained according to each network&apos;s own policy linked in §5.3.</li>
+            <li><strong>Email correspondence</strong> &mdash; retained for up to 24 months after the last reply, unless a longer period is required for legal or accounting reasons.</li>
+            <li><strong>Purchase receipts</strong> &mdash; retained as long as required by tax and consumer-protection law (typically 7 years in Japan).</li>
           </ul>
         </section>
 
         <section>
-          <h2>11. Children&apos;s privacy</h2>
-          <p>Our games are not directed to children under the age of 13. If you believe a child provided personal information in violation of applicable law, contact us so we can review the request.</p>
+          <h2>10. International transfers and processing locations</h2>
+          <p>HouneTeam is based in Japan. Our service providers process data in multiple regions, including the United States, the European Union, Ireland, Israel (AppsFlyer, IronSource), and other jurisdictions. Where data leaves the EEA, UK, or Switzerland, transfers rely on the European Commission&apos;s <strong>Standard Contractual Clauses</strong> (SCCs), the UK&apos;s International Data Transfer Addendum, or another lawful transfer mechanism offered by the relevant provider. Each provider&apos;s privacy policy describes its specific safeguards (see §5).</p>
         </section>
 
         <section>
-          <h2>12. Security</h2>
-          <p>We take reasonable steps to reduce risk, but no method of storage, transmission, or processing is completely secure. Where supported by the relevant platform or SDK, data transmitted over networks is generally sent using standard secure transport methods such as HTTPS/TLS.</p>
+          <h2>11. Your rights under GDPR (EEA, UK, Switzerland)</h2>
+          <p><strong>Data Controller:</strong> HouneTeam, Japan. Contact: <a href="mailto:info@houneteam.com">info@houneteam.com</a>.</p>
+          <p><strong>Legal bases we rely on:</strong></p>
+          <ul>
+            <li><em>Performance of a contract</em> &mdash; to operate the game you have installed and to process purchases.</li>
+            <li><em>Legitimate interests</em> &mdash; to diagnose crashes, prevent fraud, secure our backend, and conduct aggregated analytics that does not materially affect your privacy.</li>
+            <li><em>Consent</em> &mdash; for personalized advertising, attribution involving IDFA / GAID, non-essential analytics, and push notifications. You can withdraw consent at any time through the in-game settings or the device controls described in §6 and §7.</li>
+            <li><em>Legal obligation</em> &mdash; to retain purchase and tax records and to respond to lawful authority requests.</li>
+          </ul>
+          <p><strong>Your rights:</strong> access, rectification, erasure, restriction, portability, and objection. You also have the right to lodge a complaint with your local supervisory authority in the EU or with the UK Information Commissioner&apos;s Office (ICO).</p>
+          <p>To exercise any right, email <a href="mailto:info@houneteam.com">info@houneteam.com</a> from the address associated with your request. We respond within 30 days. If you are in the EEA and need an EU representative under Article 27 GDPR, contact us and we will share current representative details where one is appointed.</p>
         </section>
 
         <section>
-          <h2>13. Changes to this Privacy Policy</h2>
-          <p>We may update this Privacy Policy from time to time. When we do, we will change the effective date shown at the top of this page. Material changes may also be communicated through the game, store listing, or another appropriate channel where required.</p>
+          <h2>12. Your rights under California (CCPA / CPRA) and other US state laws</h2>
+          <p>If you are a California resident, you have rights under the California Consumer Privacy Act, as amended by the California Privacy Rights Act. Comparable rights exist for residents of Virginia, Colorado, Connecticut, Utah, Texas, Oregon, and other US states with comprehensive privacy laws.</p>
+          <p><strong>Categories of personal information we may collect, by Cal. Civ. Code §1798.140(v):</strong></p>
+          <ul>
+            <li><strong>Identifiers</strong> &mdash; IDFA, GAID, Firebase Installations ID, IP address, Play Games / Game Center player ID, Firebase Auth user ID, email address (if you contact us).</li>
+            <li><strong>Commercial information</strong> &mdash; in-app purchase records (product, timestamp, transaction ID).</li>
+            <li><strong>Internet or other electronic network activity</strong> &mdash; gameplay events, ad interactions, in-app interactions.</li>
+            <li><strong>Geolocation</strong> &mdash; approximate (city / country level) derived from IP address. We do not collect precise geolocation.</li>
+            <li><strong>Inferences</strong> &mdash; segments and audiences derived from gameplay events for analytics and advertising.</li>
+          </ul>
+          <p>We do not knowingly collect sensitive personal information as defined in §1798.140(ae) (such as government identifiers, precise geolocation, biometric or health data, or the contents of mail / email / text messages not directed to us).</p>
+          <p><strong>&quot;Sale&quot; / &quot;Sharing&quot;:</strong> we do not sell personal information for money. We may &quot;share&quot; personal information with ad partners for cross-context behavioral advertising as that term is defined under CCPA. To opt out of this sharing, use the in-game privacy settings where available, or contact <a href="mailto:info@houneteam.com">info@houneteam.com</a>. On iOS, choosing &quot;Ask App Not to Track&quot; in the ATT prompt also opts you out for that device.</p>
+          <p><strong>Rights:</strong> to know, to delete, to correct, to limit use of sensitive personal information (where applicable), to opt out of sale / sharing, and to non-discrimination. To exercise a right, email <a href="mailto:info@houneteam.com">info@houneteam.com</a>. We will respond within 45 days.</p>
         </section>
 
         <section>
-          <h2>14. Contact</h2>
-          <p>For privacy questions or requests, contact HouneTeam at <a href="mailto:info@houneteam.com">info@houneteam.com</a>.</p>
+          <h2>13. Children&apos;s privacy</h2>
+          <p>Our games are not directed to children under 13 (or under 16 where applicable, such as in parts of the EEA). We do not knowingly collect personal information from children. If you believe a child has provided personal information through our games, please contact <a href="mailto:info@houneteam.com">info@houneteam.com</a> and we will review and, where appropriate, delete the information.</p>
+        </section>
+
+        <section>
+          <h2>14. Security</h2>
+          <p>We take reasonable technical and organizational measures to protect data, including HTTPS / TLS in transit, Firebase Security Rules for Firestore, and Firebase App Check for backend abuse prevention. No method of storage or transmission is completely secure; we encourage you to keep your device, operating system, and game up to date.</p>
+        </section>
+
+        <section>
+          <h2>15. Changes to this Privacy Policy</h2>
+          <p>We may update this Privacy Policy. The effective date at the top of this page reflects the latest version. Material changes will be communicated through the game, the store listing, or another appropriate channel before the change takes effect, where required.</p>
+        </section>
+
+        <section>
+          <h2>16. Contact</h2>
+          <p>HouneTeam<br />Japan<br /><a href="mailto:info@houneteam.com">info@houneteam.com</a></p>
         </section>
       </div>
     </LegalLayout>

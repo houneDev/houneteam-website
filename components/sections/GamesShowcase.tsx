@@ -6,16 +6,38 @@ import { useRef, useState } from 'react'
 import { useI18n } from '@/lib/i18n'
 import { ease } from '@/lib/utils'
 
-const GAMES = [
+type GameStatus = 'Live' | 'Dev'
+
+type Game = {
+  id: string
+  name: string
+  icon: string
+  status: GameStatus
+  platform: string
+  playUrl?: string
+  descKey: 'game.lumo.desc' | 'game.snow.desc'
+  featureKeys: readonly ('game.lumo.f1' | 'game.lumo.f2' | 'game.lumo.f3' | 'game.lumo.f4' | 'game.snow.f1' | 'game.snow.f2' | 'game.snow.f3' | 'game.snow.f4')[]
+}
+
+const GAMES: Game[] = [
   {
     id: 'lumo',
     name: 'Lumo Idle Park',
     icon: '/game/game-icon.png',
-    status: 'Live' as const,
+    status: 'Live',
     platform: 'Android',
     playUrl: 'https://play.google.com/store/apps/details?id=com.houneteam.lumoidlepark',
-    descKey: 'game.lumo.desc' as const,
-    featureKeys: ['game.lumo.f1', 'game.lumo.f2', 'game.lumo.f3', 'game.lumo.f4'] as const,
+    descKey: 'game.lumo.desc',
+    featureKeys: ['game.lumo.f1', 'game.lumo.f2', 'game.lumo.f3', 'game.lumo.f4'],
+  },
+  {
+    id: 'snow',
+    name: 'Lumo Snow Rush',
+    icon: '/game/snow-rush-icon.png',
+    status: 'Dev',
+    platform: 'Android',
+    descKey: 'game.snow.desc',
+    featureKeys: ['game.snow.f1', 'game.snow.f2', 'game.snow.f3', 'game.snow.f4'],
   },
 ]
 
@@ -140,9 +162,13 @@ export default function GamesShowcase() {
               <div>
                 <div className="flex flex-wrap items-center gap-3 mb-4">
                   <h3 className="text-[#eef2ff] text-xl md:text-2xl font-bold">{game.name}</h3>
-                  {game.status === 'Live' && (
+                  {game.status === 'Live' ? (
                     <span className="px-2.5 py-1 rounded-full bg-[rgba(74,222,128,0.1)] border border-[rgba(74,222,128,0.2)] text-[#4ade80] text-xs font-semibold">
                       Live
+                    </span>
+                  ) : (
+                    <span className="px-2.5 py-1 rounded-full bg-[rgba(251,191,36,0.1)] border border-[rgba(251,191,36,0.25)] text-[#fbbf24] text-xs font-semibold">
+                      {t('game.status.dev')}
                     </span>
                   )}
                   <span className="px-2.5 py-1 rounded-full bg-[rgba(124,199,255,0.07)] border border-[rgba(124,199,255,0.12)] text-[#8896b8] text-xs">
@@ -168,15 +194,21 @@ export default function GamesShowcase() {
                 </ul>
 
                 <div className="mt-8">
-                  <a
-                    href={game.playUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary inline-flex"
-                  >
-                    <GooglePlayIcon />
-                    {t('game.btn.play')}
-                  </a>
+                  {game.playUrl ? (
+                    <a
+                      href={game.playUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary inline-flex"
+                    >
+                      <GooglePlayIcon />
+                      {t('game.btn.play')}
+                    </a>
+                  ) : (
+                    <span className="inline-flex items-center px-4 py-2.5 rounded-xl bg-[rgba(251,191,36,0.08)] border border-[rgba(251,191,36,0.2)] text-[#fbbf24] text-sm font-medium">
+                      {t('game.status.dev')}
+                    </span>
+                  )}
                 </div>
               </div>
             </div>
