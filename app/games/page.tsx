@@ -8,6 +8,7 @@ import { ease } from '@/lib/utils'
 import ContactCTA from '@/components/sections/ContactCTA'
 
 const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.houneteam.lumoidlepark'
+const APP_STORE_URL = 'https://apps.apple.com/app/id6762716081'
 const PLAY_DEV_URL = 'https://play.google.com/store/apps/dev?id=9215006691592135818'
 
 const FEATURE_KEYS = [
@@ -28,6 +29,14 @@ function GooglePlayIcon({ size = 20 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 512 512" fill="currentColor" aria-hidden="true">
       <path d="M48 59.49v393a4.33 4.33 0 007.35 3.05L260 256 55.35 56.44A4.33 4.33 0 0048 59.49zM345.8 174L89.22 32.64l-.16-.09c-4.42-2.4-8.62 3.58-5 7.06L292 256 345.8 174zM84.08 472.39c-3.64 3.48.56 9.46 5 7.06l.16-.09L345.8 338 292 256 84.08 472.39zM464 236.15l-69.26-38.7L343.6 256l51.14 58.55L464 275.85a23.83 23.83 0 000-39.7z"/>
+    </svg>
+  )
+}
+
+function AppleIcon({ size = 20 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 384 512" fill="currentColor" aria-hidden="true">
+      <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
     </svg>
   )
 }
@@ -118,7 +127,7 @@ export default function GamesPage() {
                   </span>
                 </div>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {['Idle', 'Casual', 'Android', 'Free to Play'].map((tag) => (
+                  {['Idle', 'Casual', 'iOS', 'Android', 'Free to Play'].map((tag) => (
                     <span
                       key={tag}
                       className="px-2.5 py-1 rounded-full bg-[rgba(124,199,255,0.06)] border border-[rgba(124,199,255,0.1)] text-[#8896b8] text-xs"
@@ -139,6 +148,15 @@ export default function GamesPage() {
                   >
                     <GooglePlayIcon />
                     {t('game.btn.play')}
+                  </a>
+                  <a
+                    href={APP_STORE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary"
+                  >
+                    <AppleIcon />
+                    {t('game.btn.appstore')}
                   </a>
                   <Link
                     href="/games/lumo/credits"
