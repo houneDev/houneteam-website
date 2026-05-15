@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { motion, useReducedMotion, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { useI18n } from '@/lib/i18n'
@@ -16,6 +17,7 @@ type Game = {
   platform: string
   googlePlayUrl?: string
   appStoreUrl?: string
+  creditsUrl?: string
   descKey: 'game.lumo.desc' | 'game.snow.desc'
   featureKeys: readonly ('game.lumo.f1' | 'game.lumo.f2' | 'game.lumo.f3' | 'game.lumo.f4' | 'game.snow.f1' | 'game.snow.f2' | 'game.snow.f3' | 'game.snow.f4')[]
 }
@@ -29,6 +31,7 @@ const GAMES: Game[] = [
     platform: 'iOS, Android',
     googlePlayUrl: 'https://play.google.com/store/apps/details?id=com.houneteam.lumoidlepark',
     appStoreUrl: 'https://apps.apple.com/app/id6762716081',
+    creditsUrl: '/games/lumo/credits',
     descKey: 'game.lumo.desc',
     featureKeys: ['game.lumo.f1', 'game.lumo.f2', 'game.lumo.f3', 'game.lumo.f4'],
   },
@@ -203,7 +206,7 @@ export default function GamesShowcase() {
                   ))}
                 </ul>
 
-                <div className="mt-8 flex flex-wrap gap-3">
+                <div className="mt-8 flex flex-wrap gap-3 items-center">
                   {game.googlePlayUrl && (
                     <a
                       href={game.googlePlayUrl}
@@ -230,6 +233,14 @@ export default function GamesShowcase() {
                     <span className="inline-flex items-center px-4 py-2.5 rounded-xl bg-[rgba(251,191,36,0.08)] border border-[rgba(251,191,36,0.2)] text-[#fbbf24] text-sm font-medium">
                       {t('game.status.dev')}
                     </span>
+                  )}
+                  {game.creditsUrl && (
+                    <Link
+                      href={game.creditsUrl}
+                      className="text-xs text-[#8896b8] hover:text-[#7cc7ff] transition-colors duration-150 underline underline-offset-2"
+                    >
+                      Credits
+                    </Link>
                   )}
                 </div>
               </div>
