@@ -11,7 +11,7 @@ export default function PrivacyPage() {
       kicker={t('privacy.kicker')}
       title={t('privacy.title')}
       desc={t('privacy.desc')}
-      effectiveDate="2026-05-13"
+      effectiveDate="2026-05-20"
     >
       <div className="legal-content">
         <section>
@@ -243,8 +243,40 @@ export default function PrivacyPage() {
           <p>We may update this Privacy Policy. The effective date at the top of this page reflects the latest version. Material changes will be communicated through the game, the store listing, or another appropriate channel before the change takes effect, where required.</p>
         </section>
 
+        <section id="data-deletion">
+          <h2>16. User data deletion</h2>
+          <p>You can ask us to delete the data associated with your game account at any time. This section explains how to request deletion, what gets removed, and what stays.</p>
+
+          <h3>16.1 How to request deletion</h3>
+          <p>Email <a href="mailto:info@houneteam.com">info@houneteam.com</a> with the subject line <strong>Data deletion request</strong> and include:</p>
+          <ul>
+            <li>The game (for example, <em>Lumo Idle Park</em>).</li>
+            <li>Your platform (Android or iOS).</li>
+            <li>Your sign-in identifier where available &mdash; <strong>Google Play Games</strong> player ID or in-game display name on Android, <strong>Apple Game Center</strong> player ID or display name on iOS.</li>
+          </ul>
+          <p>If you never signed into Play Games or Game Center, your progress lives only on the device and uninstalling the game removes it.</p>
+
+          <h3>16.2 What we delete</h3>
+          <ul>
+            <li>Your cloud-save document in <strong>Firebase Firestore</strong> (progression, currencies, upgrade state, gift records).</li>
+            <li>Your <strong>Firebase Authentication</strong> user ID linked to your Google Play Games or Apple Game Center sign-in.</li>
+            <li>The pseudonymous profile we maintain for cloud saves and in-game gifts.</li>
+            <li>Email correspondence tied to the deletion request once the request is closed, subject to the retention limits in §9.</li>
+          </ul>
+
+          <h3>16.3 What we cannot delete on your behalf</h3>
+          <ul>
+            <li><strong>Local data on your device</strong> &mdash; uninstall the game to remove it.</li>
+            <li><strong>Logs held by third-party processors</strong> (Firebase Analytics, Crashlytics, AppsFlyer, Unity LevelPlay and the mediated ad networks). To exercise rights against those providers directly, use the links in §5.</li>
+            <li><strong>Purchase records</strong> retained by Google Play or the Apple App Store, and tax / accounting records we are legally required to keep (see §9).</li>
+          </ul>
+
+          <h3>16.4 Timeline</h3>
+          <p>We acknowledge requests within 7 days and complete the deletion within 30 days of confirming your identity, unless a longer period is required by law. If we cannot fulfil the request we will tell you why.</p>
+        </section>
+
         <section>
-          <h2>16. Contact</h2>
+          <h2>17. Contact</h2>
           <p>HouneTeam<br />Japan<br /><a href="mailto:info@houneteam.com">info@houneteam.com</a></p>
         </section>
       </div>
