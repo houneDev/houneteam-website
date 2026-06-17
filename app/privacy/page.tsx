@@ -11,13 +11,13 @@ export default function PrivacyPage() {
       kicker={t('privacy.kicker')}
       title={t('privacy.title')}
       desc={t('privacy.desc')}
-      effectiveDate="2026-05-20"
+      effectiveDate="2026-06-17"
     >
       <div className="legal-content">
         <section>
           <h2>1. Summary</h2>
           <p>HouneTeam makes casual mobile games published on Google Play and the Apple App Store. To operate our games and improve them, we integrate third-party SDKs for analytics, crash reporting, advertising mediation, install attribution, push notifications, and cloud saves.</p>
-          <p>This Privacy Policy lists every category of data we or our integrated providers collect, what each provider does with it, how long we retain it, what choices you have, and who to contact. It applies to all HouneTeam games, including <strong>Lumo Idle Park</strong>, unless a specific game&apos;s store listing or in-app notice states otherwise.</p>
+          <p>This Privacy Policy lists every category of data we or our integrated providers collect, what each provider does with it, how long we retain it, what choices you have, and who to contact. It applies to all current and future HouneTeam games unless a specific game&apos;s store listing or in-app notice states otherwise. Some sections describe SDKs or event types that may not apply to every game &mdash; each title integrates only a subset of what is listed below, and the store listing and in-game privacy screen of a given game reflect what its current build actually uses.</p>
           <p><strong>HouneTeam</strong> is the data controller for the data collected through our games. Contact: <a href="mailto:info@houneteam.com">info@houneteam.com</a>. Jurisdiction: Japan.</p>
         </section>
 
@@ -33,18 +33,16 @@ export default function PrivacyPage() {
           <p>Sign-in is optional. Core gameplay does not require an account. We do not ask for your real name, postal address, or phone number.</p>
 
           <h3>2.2 Gameplay and telemetry events</h3>
-          <p>Our games send anonymous gameplay events to Firebase Analytics so we can balance the game, find broken progression paths, and understand where players get stuck. Typical events include:</p>
+          <p>Our games send anonymous gameplay events to Firebase Analytics so we can balance the game, find broken progression paths, and understand where players get stuck. The exact event set varies by title and by game type; categories we may collect across our games include:</p>
           <ul>
-            <li>Session number, session start time, and session duration.</li>
-            <li>Whether a session ended normally or after an interruption or crash.</li>
-            <li>Boost and power-up usage.</li>
-            <li>First-launch time, total play time, upgrade levels, and the timing of unlocks or purchases.</li>
-            <li>Which game objects were unlocked and when.</li>
-            <li>Economy milestones (when a player reaches certain currency thresholds).</li>
-            <li>Offline-income claim information (reward amount and offline duration).</li>
-            <li>Return-to-game timing (how long a player was absent before re-opening the game).</li>
-            <li>Ad outcome events: whether a rewarded ad was watched to completion, requested but unavailable, or skipped.</li>
-            <li>In-app purchase events (product ID, success/failure &mdash; no card or bank information).</li>
+            <li>Session events &mdash; session number, start time, duration, and whether a session ended normally or after an interruption or crash.</li>
+            <li>Lifetime events &mdash; first-launch time, total play time, and the timing of unlocks or purchases.</li>
+            <li>Progression events &mdash; level or stage completion, upgrade levels, unlocked content, and other game-specific advancement markers.</li>
+            <li>Economy events &mdash; in-game currency earned or spent, currency thresholds reached, and (for idle-style games) offline-progress claim amount and duration.</li>
+            <li>Item and tool usage &mdash; boosts, power-ups, hints, or other consumables, where the game has them.</li>
+            <li>Return-to-game timing &mdash; how long a player was absent before re-opening the game.</li>
+            <li>Ad outcome events &mdash; whether a rewarded ad was watched to completion, requested but unavailable, or skipped.</li>
+            <li>In-app purchase events &mdash; product ID, success/failure (no card or bank information).</li>
           </ul>
 
           <h3>2.3 Information collected automatically by integrated SDKs</h3>
@@ -63,9 +61,9 @@ export default function PrivacyPage() {
 
           <h3>2.4 Information stored locally on your device</h3>
           <ul>
-            <li>Session snapshot data used to calculate offline income and restore gameplay state.</li>
-            <li>Pending offline reward values until claimed.</li>
             <li>Local save state, game settings, language preference, and similar progression data.</li>
+            <li>Session snapshot data used to restore gameplay state.</li>
+            <li>For idle-style titles, pending offline-progress reward values until claimed.</li>
             <li>Cached Remote Config values used to override game balance without a new release.</li>
           </ul>
         </section>
@@ -172,7 +170,7 @@ export default function PrivacyPage() {
           <h2>8. Cloud saves</h2>
           <p>Cloud saves are <strong>optional</strong>. If you do not sign in, your progress remains only on your device.</p>
           <ul>
-            <li><strong>Android:</strong> after you sign into Google Play Games Services, save data is written to Firebase Firestore under a Firebase Authentication user ID linked to your Play Games account. Saved data includes progression, currencies, upgrade state, and timestamps.</li>
+            <li><strong>Android:</strong> after you sign into Google Play Games Services, save data is written to Firebase Firestore under a Firebase Authentication user ID linked to your Play Games account. Saved data includes progression, currencies, in-game state, and timestamps.</li>
             <li><strong>iOS:</strong> after you sign into Apple Game Center, save data is written to Firebase Firestore under a Firebase Authentication user ID linked to your Game Center player ID. Saved data is the same as on Android.</li>
           </ul>
           <p>HouneTeam does <strong>not</strong> use Apple CloudKit / iCloud for cloud saves. All cloud-save data is stored in Firebase Firestore (Google Cloud).</p>
@@ -181,7 +179,7 @@ export default function PrivacyPage() {
         <section>
           <h2>9. Data retention</h2>
           <ul>
-            <li><strong>Local save and offline-income data</strong> &mdash; stored on your device until the app is uninstalled or app storage is cleared.</li>
+            <li><strong>Local save data</strong> (including any pending offline-progress rewards for idle-style titles) &mdash; stored on your device until the app is uninstalled or app storage is cleared.</li>
             <li><strong>Cloud saves in Firestore</strong> &mdash; retained while the linked account exists so you can resume later. On request to <a href="mailto:info@houneteam.com">info@houneteam.com</a>, we delete the record within 30 days.</li>
             <li><strong>Firebase Analytics events</strong> &mdash; retained for up to 14 months by default; aggregated, non-identifying reports may be retained longer.</li>
             <li><strong>Firebase Crashlytics</strong> &mdash; crash records retained for up to 90 days.</li>
@@ -250,7 +248,7 @@ export default function PrivacyPage() {
           <h3>16.1 How to request deletion</h3>
           <p>Email <a href="mailto:info@houneteam.com">info@houneteam.com</a> with the subject line <strong>Data deletion request</strong> and include:</p>
           <ul>
-            <li>The game (for example, <em>Lumo Idle Park</em>).</li>
+            <li>The game name as it appears on the store.</li>
             <li>Your platform (Android or iOS).</li>
             <li>Your sign-in identifier where available &mdash; <strong>Google Play Games</strong> player ID or in-game display name on Android, <strong>Apple Game Center</strong> player ID or display name on iOS.</li>
           </ul>
@@ -258,7 +256,7 @@ export default function PrivacyPage() {
 
           <h3>16.2 What we delete</h3>
           <ul>
-            <li>Your cloud-save document in <strong>Firebase Firestore</strong> (progression, currencies, upgrade state, gift records).</li>
+            <li>Your cloud-save document in <strong>Firebase Firestore</strong> (progression, currencies, in-game state, gift records).</li>
             <li>Your <strong>Firebase Authentication</strong> user ID linked to your Google Play Games or Apple Game Center sign-in.</li>
             <li>The pseudonymous profile we maintain for cloud saves and in-game gifts.</li>
             <li>Email correspondence tied to the deletion request once the request is closed, subject to the retention limits in §9.</li>
