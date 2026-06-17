@@ -131,7 +131,7 @@ export default function PrivacyPage() {
             <li><strong>Google AdMob</strong> &mdash; bidder.</li>
           </ul>
           <p>Data processed by LevelPlay and the mediated networks: IDFA / GAID, ad opportunity context, bid responses, impressions, clicks, video completion, rewarded grants, IP address (in transit), device model, OS version, app version, and approximate geolocation.</p>
-          <p>Links: <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" rel="noopener noreferrer" target="_blank">Unity Game Player and App User Privacy Policy</a> · <a href="https://developers.is.com/ironsource-mobile/air/ironsource-ccpa-compliance/" rel="noopener noreferrer" target="_blank">IronSource US State Privacy</a> · <a href="https://support.google.com/admob/answer/6128543" rel="noopener noreferrer" target="_blank">AdMob Policies and Restrictions</a></p>
+          <p>Links: <a href="https://unity.com/legal/privacy-policy" rel="noopener noreferrer" target="_blank">Unity Privacy Policy</a> · <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" rel="noopener noreferrer" target="_blank">Unity Game Player and App User Privacy Policy</a> · <a href="https://developers.is.com/ironsource-mobile/air/ironsource-ccpa-compliance/" rel="noopener noreferrer" target="_blank">IronSource US State Privacy</a> · <a href="https://support.google.com/admob/answer/6128543" rel="noopener noreferrer" target="_blank">AdMob Policies and Restrictions</a></p>
 
           <h3>5.4 Google Play Games / Apple Game Center</h3>
           <ul>
@@ -154,7 +154,15 @@ export default function PrivacyPage() {
           <p>On Android, our ad partners may use your Google Advertising ID for personalized advertising and measurement. You can reset or delete the advertising ID and opt out of personalized advertising in <em>Settings → Google → Ads</em> (or <em>Settings → Privacy → Ads</em>, depending on the device). On devices that support Android Privacy Sandbox, the platform may further constrain or replace ID-based targeting.</p>
 
           <h3>6.3 Consent for personalized advertising (EEA / UK)</h3>
-          <p>In the EEA, the UK, and other regions where consent is required, our games display a consent message before personalized advertising or non-essential analytics. You can change your choice at any time through the in-game privacy settings, where available, or by reinstalling the app.</p>
+          <p>If you are in the EEA, the UK, Switzerland, or another region where consent is required, our games display an <strong>in-app consent prompt</strong> before any personalized advertising or non-essential analytics SDK runs. The prompt lets you accept personalized ads or choose <strong>limited (non-personalized) ads</strong>. Non-personalized ads are the default if you decline or dismiss the prompt &mdash; gameplay is never blocked by your choice.</p>
+          <p>You can reopen the consent options at any time from the in-game <em>Settings → Privacy</em> screen. Changing your choice takes effect on the next ad request.</p>
+
+          <h3>6.4 Personalized vs non-personalized ads, and legal basis</h3>
+          <ul>
+            <li><strong>Personalized ads</strong> use advertising identifiers (Apple IDFA or Google Advertising ID) and inferred audience signals so partners can serve ads relevant to you. We show personalized ads only after your explicit consent (or, on iOS, after you allow App Tracking Transparency for the app).</li>
+            <li><strong>Non-personalized ads</strong> use only contextual signals such as coarse country, the game category, and the ad slot. No advertising identifier is shared with ad networks for targeting. This is the default outside consent regions and after a decline.</li>
+          </ul>
+          <p>Legal basis for personalized advertising under GDPR is your <em>consent</em> (Art. 6(1)(a)). You can withdraw consent at any time via <em>Settings → Privacy</em>, which reopens the consent options. Withdrawal does not affect the lawfulness of processing carried out before withdrawal.</p>
         </section>
 
         <section>
