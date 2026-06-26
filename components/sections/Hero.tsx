@@ -105,9 +105,11 @@ export default function Hero() {
           />
         ))}
 
-        {/* Snow Rush card — in development, links to /games */}
-        <Link
-          href="/games"
+        {/* Snow Rush card — live on iOS, links to App Store */}
+        <a
+          href="https://apps.apple.com/app/id6766104998"
+          target="_blank"
+          rel="noopener noreferrer"
           className="absolute bottom-[40%] right-[13%] bg-[rgba(12,22,42,0.92)] border border-[rgba(124,199,255,0.16)] backdrop-blur-md rounded-2xl p-3.5 flex items-center gap-3 shadow-2xl transition-all duration-200 hover:border-[rgba(124,199,255,0.32)] hover:bg-[rgba(15,28,52,0.95)]"
           style={{ width: 240, zIndex: 10 }}
         >
@@ -116,11 +118,11 @@ export default function Hero() {
             <p className="text-[#eef2ff] text-sm font-semibold leading-tight">Lumo Snow Rush</p>
             <p className="text-[#7cc7ff] text-xs mt-0.5">{t('hero.showcase.snow.sub')}</p>
             <div className="flex items-center gap-1.5 mt-1.5">
-              <span className="px-2 py-0.5 rounded-full bg-[rgba(251,191,36,0.1)] border border-[rgba(251,191,36,0.25)] text-[#fbbf24] text-[10px] font-semibold">{t('game.status.dev')}</span>
-              <span className="text-[#8896b8] text-[10px]">Android</span>
+              <span className="px-2 py-0.5 rounded-full bg-[rgba(74,222,128,0.1)] border border-[rgba(74,222,128,0.2)] text-[#4ade80] text-[10px] font-semibold">Live</span>
+              <span className="text-[#8896b8] text-[10px]">iOS</span>
             </div>
           </div>
-        </Link>
+        </a>
 
         {/* Lumo Idle Park card — clickable, links to Google Play */}
         <a
@@ -158,7 +160,7 @@ export default function Hero() {
           </motion.p>
           <motion.div variants={item(reduced)} className="mt-8 flex items-center gap-6">
             <div>
-              <p className="text-[#eef2ff] font-bold text-xl">1</p>
+              <p className="text-[#eef2ff] font-bold text-xl">2</p>
               <p className="text-[#8896b8] text-xs mt-0.5">{t('hero.stat1.label')}</p>
             </div>
             <div className="w-px h-8 bg-[rgba(124,199,255,0.12)]" />

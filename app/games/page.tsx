@@ -9,6 +9,7 @@ import ContactCTA from '@/components/sections/ContactCTA'
 
 const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.houneteam.lumoidlepark'
 const APP_STORE_URL = 'https://apps.apple.com/app/id6762716081'
+const SNOW_APP_STORE_URL = 'https://apps.apple.com/app/id6766104998'
 const PLAY_DEV_URL = 'https://play.google.com/store/apps/dev?id=9215006691592135818'
 
 const FEATURE_KEYS = [
@@ -188,7 +189,7 @@ export default function GamesPage() {
         </motion.div>
       </div>
 
-      {/* Lumo Snow Rush — in development */}
+      {/* Lumo Snow Rush — live on iOS */}
       <div className="max-w-[1240px] mx-auto px-6 pb-16">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -226,12 +227,12 @@ export default function GamesPage() {
               <div>
                 <div className="flex flex-wrap items-center gap-3 mb-3">
                   <h2 className="text-[#eef2ff] text-2xl md:text-3xl font-bold">Lumo Snow Rush</h2>
-                  <span className="px-2.5 py-1 rounded-full bg-[rgba(251,191,36,0.1)] border border-[rgba(251,191,36,0.25)] text-[#fbbf24] text-xs font-semibold">
-                    {t('game.status.dev')}
+                  <span className="px-2.5 py-1 rounded-full bg-[rgba(74,222,128,0.1)] border border-[rgba(74,222,128,0.2)] text-[#4ade80] text-xs font-semibold">
+                    Live
                   </span>
                 </div>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {['Arcade', 'Casual', 'Android'].map((tag) => (
+                  {['Arcade', 'Casual', 'iOS'].map((tag) => (
                     <span
                       key={tag}
                       className="px-2.5 py-1 rounded-full bg-[rgba(124,199,255,0.06)] border border-[rgba(124,199,255,0.1)] text-[#8896b8] text-xs"
@@ -243,6 +244,17 @@ export default function GamesPage() {
                 <p className="text-[#8896b8] text-sm md:text-base leading-relaxed max-w-[600px]">
                   {t('game.snow.desc')}
                 </p>
+                <div className="mt-6 flex flex-wrap gap-3 items-center">
+                  <a
+                    href={SNOW_APP_STORE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary"
+                  >
+                    <AppleIcon />
+                    {t('game.btn.appstore')}
+                  </a>
+                </div>
               </div>
             </div>
           </div>

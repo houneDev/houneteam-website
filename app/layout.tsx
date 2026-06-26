@@ -7,7 +7,7 @@ import Footer from '@/components/layout/Footer'
 export const metadata: Metadata = {
   title: 'HouneTeam | Indie Game Studio',
   description:
-    'HouneTeam is a small indie game studio based in Japan. We build mobile games: idle, casual, and tycoon. Published title: Lumo Idle Park on Android.',
+    'HouneTeam is a small indie game studio based in Japan. We build mobile games: idle, casual, and tycoon. Published titles: Lumo Idle Park (iOS, Android) and Lumo Snow Rush (iOS).',
   metadataBase: new URL('https://houneteam.com'),
   alternates: {
     canonical: 'https://houneteam.com/',
